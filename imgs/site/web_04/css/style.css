@@ -1,0 +1,266 @@
+*{
+    color:#333333;
+}
+ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration:none;
+    color:#333333;
+}
+html, body{
+    height:100%;
+
+}
+#wrap{
+    width:100%;
+    height:100%;
+    min-width:600px;
+    min-height:600px;
+}
+.top{
+    width:100%;
+    height:calc(100% - 100px);
+}
+.D{
+    width:100%;
+    height:100px;
+}
+.A{
+    width:200px;
+    height:100%;
+    float:left;
+}
+.C{
+    width:400px;
+    height:100%;
+    float:left;
+}
+.B{
+    width:calc(100% - 600px);
+    height:100%;
+    float:left;
+    overflow:hidden;
+}
+.logo{
+    width:200px;
+    height:100px;
+    line-height:130px;
+}
+.menus{
+    width:170px;
+    height:200px;
+    margin:15px;
+}
+
+li{
+    width:170px;
+    height:50px;
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+    line-height:50px;
+}
+li:hover{
+    background-color:#e0bc1b;
+}
+ .sub{
+    display: none;
+    font-size:16px;
+    font-weight:lighter;
+}
+.pan{
+    width:100%;
+    height:300%;
+    position:relative;
+}
+.slide1{
+    width:100%;
+    height:calc(100% / 3);
+    background-color: red;
+}
+.slide2{
+    width:100%;
+    height:calc(100% / 3);
+    background-color: rgb(17, 29, 196);
+}
+.slide3{
+    width:100%;
+    height:calc(100% / 3);
+    background-color: rgb(4, 206, 105);
+}
+.gongji{
+    width:400px;
+    height:40%;
+    
+}
+.gall{
+    width:398px;
+    height:40%;
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+}
+.link{
+    width:400px;
+    height:20%;
+}
+.bin{
+    height:80px;
+}
+.gongbtn{
+    width:100px;
+    height:50px;
+    font-weight:bold;
+    font-size:18px;
+    line-height:50px;
+    text-align:center;
+    margin-top:0px;
+}
+.gonglist{
+    width:400px;
+    height:200px;
+}
+.list{
+    float:left;
+
+}
+.list div{
+    width:300px;
+    height:50px;
+    line-height:50px;
+    font-size:14px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    
+}
+.date{
+    float:left;
+}
+
+.date div{
+    width:100px;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    font-size:14px;
+}
+.gallbtn{
+    width:100px;
+    height:50px;
+    font-weight:bold;
+    font-size:18px;
+    line-height:50px;
+    text-align:center;
+    margin-top:0px;
+}
+.imgs{
+    width:400px;
+    height:200px;
+}
+.imgs div{
+    width:150px;
+    height:150px;
+    background-color: black;
+    float:left;
+    margin:25px;
+}
+.link div{
+    width:100px;
+    height:100px;
+    float:left;
+
+}
+.logo2{
+    width:200px;
+    height:100px;
+    background-color: #e0bc1b;
+    float:left;
+    line-height:130px;
+}
+.copy{
+    width:calc(100% - 400px);
+    height:100px;
+    background-color: #e0bc1b;
+    float:left;
+    
+}
+.copy1{
+    width:calc(100%);
+    height:50px;
+    text-align:center;
+    line-height:85px;
+    font-weight:bold;
+
+}
+.copy2{
+    width:calc(100%);
+    height:50px;
+    text-align:center;
+    line-height:50px;
+    font-size:14px;
+
+}
+.family{
+    width:200px;
+    height:100px;
+    background-color:#e0bc1b;
+    float:left;
+}
+#option{
+    width:150px;
+    height:30px;
+    border:1px solid black;
+    margin-top:35px;
+}
+#modal{
+    width:100%;
+    height:10000px;
+    background-color:rgba(0,0,0,0.6);
+    position:relative;
+    top:-900px;
+    left:0;
+    z-index:99;
+    display: none;
+}
+.popup{
+    width:450px;
+    height:250px;
+    background-color: white;
+    position:absolute;
+    top:250px;
+    left:50%;
+}
+.title{
+    width:450px;
+    height:80px;
+    text-align:center;
+    font-weight:bold;
+    font-size:20px;
+    line-height:80px;
+}
+.nayong{
+    width:450px;
+    height:120px;
+    text-align:center;
+    line-height:35px;
+}
+.close{
+    width:450px;
+    height:50px;
+    margin-top:20px;
+}
+span{
+    width:50px;
+    height:20px;
+    border:1px solid black;
+    margin-left:385px;
+    margin-top:20px;
+
+}
+.pan img{
+    width:100%;
+    height:100%;
+}
