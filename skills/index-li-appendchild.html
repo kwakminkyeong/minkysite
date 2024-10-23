@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <button>추가</button>
+        <ul>
+            <li>봄</li>
+            <li>여름</li>
+            <li>가을</li>
+            <li>겨울</li>
+        </ul>
+
+
+        <script>
+           let btn=document.querySelector("button");
+           btn.addEventListener("click",yourDo);
+           const array=["봄", "여름", "가을","겨울"];
+           let parent=document.querySelector("ul");
+          
+           let i=0;
+           function yourDo(){
+           //alert("yourDo");
+            //요소를 하나 만들어서
+            //부모에 추가해주자
+            //1.createElement("li");
+            //2.createTextNode(array[0]);
+            //li의 요소.appendChild();
+            //부모의 요소를 찾고, 부모의 자식으로
+            //부모의 요소.appendChild(만들고자하는 요소);
+            let _li=document.createElement("li");
+            
+            let txtNode=document.createTextNode(array[i]);
+            
+            _li.appendChild(txtNode);
+            parent.appendChild(_li);
+            i++;
+            if( i%4==0){
+                i=0;
+            }
+           }
+
+        </script>
+    </body>
+</html>

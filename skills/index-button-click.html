@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="urf-8">
+    </head>
+    <style>
+        /*태그 selector*/
+       
+    </style>
+    <body>
+        <h1 onclick="change()">자바스크립트</h1>
+        <p onclick="change1()">위의 글자를 클릭하세요.</p>
+
+
+        <script>
+        //    function change(){
+        // //    let tag=document.querySelector("h1");
+        // //    tag.style.color="red";
+        //    document.querySelector("h1").style.color="yellow";
+        //    }
+
+
+        //    function change1(){
+        //     let tag1=document.querySelector("p");
+        //     tag1.style.color="blue";
+        //    }
+
+        document.querySelector("h1").onclick=function(){
+            this.style.color="pink";
+        }
+        document.querySelector("p").onclick=function(){
+            this.style.color="orange";
+        }
+
+
+          
+        </script>
+    </body>
+</html>

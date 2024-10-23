@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>익명함수</title>
+        <meta charset="urf-8">
+    </head>
+    <body>
+        <script>
+            (function(){
+                return 'hi';
+            })  //함수정의
+            let func = function(){
+                return 'hi';
+            }   //변수에 받았음
+            document.write(func()+"<br>");//실행방법
+
+            //화살표함수 => ;;;;익명함수에서만 사용합니다. ()=>{}
+            let func2=() => {document.write("hi"+"<br>")};
+            func2();
+
+
+            (function(){
+                document.write("Hi"+"<br>");
+            })();
+        
+            (function(user){
+                document.write(user+"안녕하세요"+"<br>");
+            })();
+
+            let run=function(user){
+                document.write(user+"안녕하세요"+"<br>");
+            }
+            run("iot");
+
+            let run2 = (user) =>{document.write(user+"안녕하세요"+"<br>");}
+            run2("북부");
+
+           
+
+            //익명함수 실행하기
+            //익명함수 변수로 받아서 실행해보기
+            //화살표함수로 다시 표현해 보기, 실행해보기
+
+            (function(num){
+                document.write(num+"을 입력받았습니다."+"<br>");
+            })("여기에 변수");
+
+            let run3=function(num){
+                document.write(num+"을 입력받았습니다."+"<br>");
+            }
+            run3("IOT");
+            
+
+            let run4 =(num) =>{document.write(num+"을 입력받았습니다."+"<br>");}
+            run4("기술교육원");
+
+            
+            
+            
+            (function(num2){
+                document.write(num2+"을 입력받았습니다."+"<br>");
+            })("날씨가 좋군요");
+
+            
+            let run5=function(num2){
+                document.write(num2+"을 입력받았습니다."+"<br>");
+            }
+            run5("시원하다 못해 춥다");
+
+            let run6=(num2)=> {document.write(num2+"을 입력받았습니다."+"<br>");}
+            run6("하늘이 청명하다");
+
+            
+            //변수 2개로 함수실행하기
+            
+            (function(num3,num4){
+                document.write(num3+num4+"을 입력받았습니다"+"<br>");
+            })("한결이가","가을에");
+
+            let run7=function(num3,num4){
+                document.write(num3+num4+"을 입력받았습니다."+"<br>");
+            }
+            run7("군대를","11월 27일에");
+
+            let run8=(num3,num4)=>{document.write(num3+num4+"을 입력받았습니다."+"<br>");}
+            run8("갑니다","슬퍼");
+
+
+
+            /*
+            익명함수 즉시 실행
+            (function(변수){
+                document.write();
+            })(매개변수를 넣어줍니다.);
+
+            익명함수를 변수에 받아서 실행
+            let run=function(변수){
+                document.write();
+            }
+            run(매개변수를 넣어줍니다.);
+
+            람다식 실행
+            let run1=(변수)=>{document.write();}
+            run1(매개변수를 넣어줍니다.);
+
+
+           
+            */
+
+
+        </script>
+    </body>
+</html>

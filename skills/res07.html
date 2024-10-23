@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>폰트사이트</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <style>
+           .xx-small{font-size:xx-small;}
+           .x-small{font-size:x-small;}
+           .small{font-size:small;}
+           .medium{font-size:medium;}
+           .large{font-size:large;}
+           .x-large{font-size:x-large;}
+           .xx-large{font-size:xx-large;}
+
+           .larger{font-size:larger;}
+           .smaller{font-size:smaller;}
+
+           .parent{border:1px solid black; font-size:10px;}
+           .em{font-size:2em;} /*고정크기  1em이 기본, 2em은 2배, 3em은 3배*/
+           .rem{font-size:2rem;}
+           .percent{font-size:150%;}
+           .pt{font-size:12pt;}
+           .vw{font-size:5vw;}
+           .vh{font-size:5vh;}
+        </style>
+    </head>
+    <body>
+        <p>고정 기본 문자 크기</p>
+        <p class="xx-small">xx-small문자 크기</p>
+        <p class="x-small">xx-small문자 크기</p>
+        <p class="small">small문자 크기</p>
+        <p class="medium">medium문자 크기</p>
+        <p class="large">large문자 크기</p>
+        <p class="x-large">x-large문자 크기</p>
+        <p class="xx-large">xx-large문자 크기</p>
+
+
+        <p>상대 문자 크기</p>
+        <p class="larger">larger문자크기</p>      <!--부모의 글자사이즈를 기준으로 크고작아진다-->
+        <p class="smaller">smaller문자크기</p>
+        <p class="em">2em문자크기</p>
+        <p class="rem">2rem문자크기</p>
+        <p class="percent">150%문자크기</p>
+
+        <div class="parent">
+            <p>상대 문자 크기</p>
+            <p class="larger">larger문자크기</p>      <!--자기 부모의 글자사이즈를 기준으로 크고 작아진다-->
+            <p class="smaller">smaller문자크기</p>    <!--자기 부모의 글자사이즈를 기준으로 크고 작아진다-->
+            <p class="em">2em문자크기</p>             <!--부모가 없다면 최상위 16px을 기준으로 커진다-->
+            <p class="rem">2rem문자크기</p>           <!--문서 전체에서 균일한 사이즈를 가지고 있다.최상위 16px을 기준으로 커진다-->
+            <p class="percent">150%문자크기</p>       <!--초기의 마크업의 기준을 잘 잡아야한다.-->  
+        </div>
+        <p>특수 문자 크기</p>
+        <p class="pt">12pt문자크기</p>   <!--3pt=4px-->
+        <p class="vw">5vw문자크기</p>       <!--가변형-->
+        <p class="vh">5vh문자크기</p> 
+
+    </body>
+</html>

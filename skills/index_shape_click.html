@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <style>
+
+            #wrap{
+                width:250px;
+                height:110px;
+               
+            }
+            .box1{
+                width:100px;
+                height:100px;
+                background-color: skyblue;
+                float: left;
+               
+               
+            }
+            .box2{
+                width:100px;
+                height:100px;
+                background-color:pink ;
+                display: none;
+                position: relative;
+                left: 150px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="box1">
+                
+            </div>
+            <div class="box2">
+               
+            </div>
+        </div>
+        <script>
+            // document.querySelector(".box1").onmouseover=function(){
+            //     this.style.backgroundColor="red";
+            // }
+            // document.querySelector(".box1").ondblclick=function(){
+            //     this.style.backgroundColor="skyblue";
+            //     document.querySelector(".box2").style.display="none";
+            // }
+
+            // document.querySelector(".box1").onclick=function(){
+            //     document.querySelector(".box2").style.display="block";
+                
+            // }
+
+            // document.querySelector(".box2").onclick=function(){
+            //     document.querySelector(".box1").style.display="none";
+            //     this.style.display="block";
+            // }
+            // document.querySelector(".box2").ondblclick=function(){
+            //     this.style.backgroundColor="lightgreen";
+            //     document.querySelector(".box1").style.display="block";
+            //     this.style.display="none";
+            // }
+            
+            let elementFirst=document.querySelector(".box1");
+            let elementSecond=document.querySelector(".box2");
+            let body=document.querySelector("body")
+
+            elementFirst.onclick=function(){
+                elementSecond.style.display="block";
+                this.style.backgroundColor="yellow";
+                body.style.backgroundColor="lightgreen";
+            }
+            elementFirst.ondblclick=function(){
+                elementSecond.style.display="none";
+                this.style.backgroundColor="skyblue";
+                body.style.backgroundColor="lightcyan";
+            }
+           
+            elementSecond.onclick=function(){
+                elementFirst.style.display="none";
+                this.style.backgroundColor="coral";
+                body.style.backgroundColor="lightgray";
+            }
+            elementSecond.ondblclick=function(){
+                elementFirst.style.display="block";
+                this.style.backgroundColor="pink";
+                body.style.backgroundColor="lightyellow";
+            }
+        </script>
+    </body>
+</html>

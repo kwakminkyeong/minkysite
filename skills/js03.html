@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+        <title>DOM과 기초문법의 연결</title>
+        <meta charset="utf-8">
+        <style>
+            .hot{
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>1번 데이터</h1>
+        <h1>2번 데이터</h1>
+        <h1>3번 데이터</h1>
+        <h1>4번 데이터</h1>
+        <h1>5번 데이터</h1>
+        <h1>6번 데이터</h1>
+        <h1>7번 데이터</h1>
+        <script>
+            var datas=document.getElementsByTagName("h1");
+            //console.log(datas.length);
+            for(var a=0; a<datas.length; a++){
+                if(a%3==0 && a!=0){
+                    datas[a].innerHTML+="::3의 배수"
+                   // datas[a].innerHTML=datas[a].innerHTML+"::3의 배수"
+                } // a를 3으로 나눴을때 나머지가 0 이면 실행 if end
+                else{
+                console.log(datas[a]);
+                datas[a].setAttribute("style", "color:red");
+                }//a를 3으로 나눴을때 나머지가 0이 아니면 실행 else end
+                if(a%5==0){
+                    datas[a].setAttribute("class", "hot");
+                }
+            }
+            //datas : 변수의 이름, 현재는 데이터가 여러개 들어간 배열(array)의 형태를 하고 있다.
+            //[a]   : 배열 형태의 데이터에서 해당 정보가 위치한 고유번호(index)를 지정
+            //.     : 내부에 있는
+            //set   : 데이터를 입력
+            //attribute : 속성, HTML 문서에서는 속성노드_태그 내부에 별도로 지정된 속성값
+            //()    :동작을 수행하라는 뜻
+
+
+            /*
+            배열 내부의 데이터를 하나씩 전부 확인하는 반복문
+            for(var i=0; i<배열.length; i++){
+
+            }
+            */
+           
+            //document.getElementsByTagName();  전체 문서 안에서 요소들을 ()를 태그이름을 기준으로 가져와 변수에 넣어라
+            //document : 문서, 현재 실행되고 있는 HTML문서  최상위의 노드. html문서. 기준점
+            //.        : A.B  - A내부에 있는 B
+            //get      : 데이터를 취득한다. 상자안에서 끄집어낸다. set은 데이터의 입력
+            //elements : 요소,HTML문서에서는 태그를 의미한다.
+            //by       : 기준, 동작의 기준을 지정. by뒤에는 기준에 대한 이름이 나온다
+            //tag name : 태그명, h1등 태그를 특정할 수 있는 명칭
+            //()       : 동작을 수행하라는 명령
+
+            //파스칼표기법 : 클래스의 이름을 지을 때 사용, 단어마다 첫문자를 대문자로 표기
+            //              GetElementsByTagName
+            //카멜표기법 : 함수의 이름을 지을 때 사용, 두번째 단어부터 첫문자를 대문자로 표기
+            //              getElementsByTagName
+            //팟홀표기법 : 변수의 이름을 지을 때 사용, 각 단어를 _로 연결
+            //              get_elements_by_tag_name
+        </script>
+    </body>
+</html>

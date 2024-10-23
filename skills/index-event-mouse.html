@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+    </head>
+    <style>
+        #wrap{
+            width:1000px;
+            margin: 0 auto;
+        }
+
+        .green, .orange, .purple{
+            width:200px;
+            height:100px;
+            border-radius:10px;
+            border:2px solid #eee;
+            display: inline-block;
+            text-align: center;
+            line-height: 100px;
+        }
+        .result{
+            width:620px;
+            height:300px;
+            border-radius:10px;
+            border:2px solid #eee;
+            background-color: beige;
+            margin-top: 8px;
+        }
+    </style>
+    <body>
+        <div id="wrap">
+            <div onclick="changeBg('green')" ondblclick="changeBg('beige')"  class="green">Green</div>
+            <div onclick="changeBg('orange')" ondblclick="changeBg('beige')"  class="orange">Orange</div>
+            <div onclick="changeBg('purple')"  ondblclick="changeBg('beige')" class="purple">Purple</div>
+            <div class="result"></div>
+        </div>   
+        <script>
+
+            /*function add(num1, num2){
+                return num1+num2;
+            }
+            add(5,10);
+            */
+
+            function changeBg(color){
+            //    let result=document.getElementsByClassName("result");
+            //    console.log(result);
+            //    result[0].style.backgroundColor= "green";
+            //    result[0].style.backgroundColor= "orange";
+            //    result[0].style.backgroundColor= "purple";
+            
+                
+               let resultQuery= document.querySelector(".result");
+               resultQuery.style.backgroundColor=color;
+               
+            }
+
+            
+            
+           /* function changeBgOrange(){
+                let result=document.getElementById("result");
+                result.style.backgroundColor = "orange";
+            }
+            function changeBgPurple(){
+                let result=document.getElementById("result");
+                result.style.backgroundColor="purple";
+            }
+           
+
+            function changeBgBeige(){
+                let result=document.getElementById("result");
+                result.style.backgroundColor="beige";
+            }
+            */
+            
+
+
+           /* function changeBgGreen(){
+                //선택한 버튼의 색을 result에 셋팅해주고 버튼은 색을 없애준다.
+                document.getElementsByClassName("green").style.backgroundColor="white";
+                document.getElementsByClassName("green").style.color="black";
+                //결과창
+                let result=document.getElementsByClassName("result");
+                result.style.backgroundColor="green";
+            }
+            */
+
+
+
+            /*function changeBgGreen(){
+                //선택한 버튼의 색을 result에 셋팅해주고 버튼은 색을 없애준다.
+                document.getElementsByClassName("green").style.backgroundColor="white";
+                document.getElementsByClassName("green").style.color="black";
+                //결과창
+                let result=document.getElementsByClassName("result");
+                result.style.backgroundColor="green";
+
+                let resultTag=document.getElementsByTagName("div");
+            }
+           */
+
+            /*
+            
+            function changBg(매개변수){
+                let result=document.getElementById("변경될");
+                result.style.backgroundColor=매개변수;
+
+            }
+            
+            */
+        </script> 
+    </body>
+</html>

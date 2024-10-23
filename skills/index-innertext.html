@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>innertext()</title>
+        <meta charset="urf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <button>innerText로 표시하기</button>
+        </div>
+        <div>
+            <button>innerHtml()</button>
+        </div>
+        <h1>현재시각</h1>
+        <div id="current"></div>
+
+
+        <script>
+            let now=new Date();
+            let crr= document.getElementById("current")
+
+            function innerText1(){
+             crr.innerText=now;
+             btns[0].style.backgroundColor="red";   
+            
+           
+            };
+
+            let btns=document.getElementsByTagName("button");
+                btns[0].onclick=innerText1;
+               
+                btns[1].onclick=function(){
+                    crr.innerHtml="<u>"+now+"</u>";
+                    crr.style.backgroundColor="black";  
+                    crr.style.color="white";
+                };
+
+                
+        </script>
+    </body>
+</html>

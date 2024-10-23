@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>레이아웃 처리</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <style>
+            #wrap{
+                width:100%;
+                height:300px;
+                
+            }
+            .A{
+                height:100px;
+                background-color: red;
+            }
+            .B{
+                height:100px;
+                background-color: orange;
+            }
+            .C{
+                height:100px;
+                background-color: yellow;
+            }
+            .D{
+                height:100px;
+                background-color: green;
+            }
+            .E{
+                height:100px;
+                background-color: blue;
+            }
+            .F{
+                height:100px;
+                background-color: navy;
+            }
+            .G{
+                height:100px;
+                background-color: purple;
+            }
+
+            @media screen and (min-width:601px) and (max-width:900px){
+                .D, .E, .F{
+                    width:calc(100% / 3);
+                    float:left;
+                    height:200px;
+                }
+                .G{
+                    width:100%;
+                    float:left;
+                    height:200px;
+                }
+            }
+            @media screen and (min-width:901px){
+                #wrap{
+                    width:900px;
+                    margin: 0 auto;
+                }
+                .A, .B, .C {
+                    width:calc(100% / 3);
+                    float:left;
+                }
+                .D{
+                    height:400px;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="A"></div>
+            <div class="B"></div>
+            <div class="C"></div>
+            <div class="D"></div>
+            <div class="E"></div>
+            <div class="F"></div>
+            <div class="G"></div>
+        </div>
+    </body>
+</html>

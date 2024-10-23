@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>img hover()</title>
+        <meta charset="urf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+           img:last-ch{
+                width:400px;
+                height:400px;
+                border:2px solid black;
+
+            }
+        </style>
+    </head>
+    <body>
+
+        <img src="imgs/easys-1.jpg" alt="여자그림">
+        <!--<img src="imgs/easys-2.jpg" alt="남자그림"> -->
+
+        <script>
+        let picture=document.querySelector("img");    
+        picture.addEventListener("mouseover",changePic);
+        function changePic(){
+            picture.src="imgs/easys-2.jpg";//남자
+        }
+
+        picture.addEventListener("mouseleave",changePic2);
+        function changePic2(){
+            picture.src="imgs/easys-1.jpg";//여자
+        }
+            picture.addEventListener("click",changePic2);
+            
+        
+
+        </script>
+    </body>
+</html>

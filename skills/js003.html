@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>애니메이션 처리</title>
+        <meta charset="utf-8">
+        <style>
+            #box{
+                width:200px;
+                height: 200px;
+                background-color: red;
+                position: relative; /*기준점을 잡아준다.*/
+                left:0px;
+                top:0px;
+                transition: 1s;
+                rotate:45deg;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+
+        </div>
+
+
+        
+        
+        <script>
+            //이동의 중간과정을 전부 보여주는 것을 애니메이션이라고 한다
+
+            let box=document.getElementById("box");
+            let left;
+            /*for문을 이용하는 경우 굉장히 빠른 속도로 변경되어 인식 불가
+            for(let i=0; i<=500; i++){
+                left="left:"+i+"px";
+                
+                box.setAttribute("style",left);
+               
+            }*/
+
+            //setInterval(동작, 시간); :주어진 시간마다 정해진 동작을 반복하도록 지정
+            /*let number=0;
+            setInterval(function(){
+                number++;
+                left="left:"+number+"px";
+                box.setAttribute("style",left);
+                
+            },100); /*갱신빈도가 낮아지면 컴퓨터가 느려진다*/
+
+            let data=0;
+            box.addEventListener("mouseover", function(){
+                data+=360;
+                box.setAttribute("style","rotate:"+data+"deg; left:500px;");
+            });
+
+        </script>
+    </body>
+
+</html>

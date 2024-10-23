@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf=8">
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <form action="#" method="post" name="f1" onsubmit="submit_chk(this)" onreset="reset_chk(this)">
+            <fieldset>
+                <legend>회원가입</legend>
+                <p>
+                    <label for="user_name">이름</label>
+                    <input type="text" name="user_name" id="user_name">
+                </p>
+                <p>
+                    <label for="user_tel">연락처</label>
+                    <input type="text" name="user_tel" id="user_tel">
+                </p>
+                <p>
+                    <input type="submit" value="회원가입">
+                    <input type="reset" value="가입취소">
+                </p>
+            </fieldset>
+       
+       
+        </form>
+        <script>
+            function submit_chk(myForm){
+                //이름입력하는 <input name="user_name">을 변수 name에 참조시켰습니다.
+                let name=myForm.user_name;
+
+                //연락처 입력하는 <input name="user_tel">을 변수 tel에 참조시켰습니다. 
+                let tel=muForm,user_tel;
+            }
+
+            //취소 버튼을 눌렀을 땐 확인/취소 창을 띄우고, 다시 한번 회원가입 취소 여부를 묻습니다. 
+            function reset_chk(myForm){
+                let result=confirm("정말로 회원가입을 취소하시겠습니까?");
+                if(result){
+                    return false;
+                }
+            }
+
+        
+        
+        </script>
+    </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>슬라이드 제작</title>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <div id="slide"></div>
+        <script>
+            //슬라이드가 동작하기 위한 frame의 크기와 형태를 규정, 후에 이 frame에게 overflow:hidden을 주어야 한다.
+            $("#slide").css({"width":"400px", "height":"200px", "background-color":"red","margin":"0 auto"});
+
+            //자동슬라이드가 아닌 수동슬라이드 조작을 위한 버튼이나 dot처리에 대한 User Interface가 자리잡는 부분
+            var btns=$('<div class="btns"><div class="left">왼쪽</div><div class="right">오른쪽</div></div>');
+            $("#slide").after(btns);
+            btns.css({"width":"400px", "height":"50px", "background-color":"blue","margin":"0 auto"});
+            $(".btns > div").css({ "width":"75px","height":"50px","background-color":"gray","text-align":"center","line-height":"50px"});
+            $(".left").css({"float":"left"});
+            $(".right").css({"float":"right"});
+
+            //슬라이드 제작
+            //1. 사진을 올릴 판을 제작해야 한다.
+            var pan=$("<div class='pan'></div>");
+            $("#slide").append(pan);
+            pan.css({"width":"1600px","height":"200px","background-color":"orange","position":"relative"});
+
+             //2. 판에 올라갈 이미지를 제작해야 한다
+            var img1=$("<div class='img1'>이미지1</div>");
+            pan.append(img1);
+            img1.css({"width":"400px", "height":"200px","background-color":"yellow"});
+           
+            var img2=$("<div class='img2'>이미지2</div>");
+            pan.append(img2);
+            img2.css({"width":"400px", "height":"200px","background-color":"green"});
+
+            var img3=$("<div class='img3'>이미지3</div>");
+            pan.append(img3);
+            img3.css({"width":"400px", "height":"200px","background-color":"indigo"});
+           
+
+            var img4=$("<div class='img4'>이미지4</div>");
+            pan.append(img4);
+            img4.css({"width":"400px", "height":"200px","background-color":"yellow"});
+
+            pan.find("div").css("float","left"); //변수의 pan이다.
+
+           
+            //마지막에 frame을 벗어난 부분을 눈에 보이지 않도록 하는 방법 #slide
+            $("#slide").css("overflow","hidden");
+
+            //버튼을 클릭하면 슬라이드가 움직이는 동작 구현
+            //1번 이미지는 left 0px
+            //2번 이미지는 left -400px
+            //3번 이미지는 left -800px 바꾸는 내용은 변수에 넣어야한다.
+            var point=0; //이미지를 이동시키기 위한 left 값을 저장하고 변경하기 위한 변수
+
+            $(".right").click(function(){
+                point-=400;
+                if(point<-1200){
+                    point=0;
+                }
+                pan.animate({"left":point+"px"});
+            });
+            $(".left").click(function(){
+                point+=400;
+                if(point>0){
+                    point=-800;
+                };
+                
+                pan.animate({"left":point+"px"});
+            });
+
+            //DOT 처리
+            var spot=$("<div class='spot'></div>");
+            $(".left").after(spot);
+            spot.css({"width":"250px","height":"50px","background-color":"black","float":"left"});
+            var dot1=$("<div class='dot1'></div>");
+            spot.append(dot1);
+            dot1.css({"width":"10px","height":"10px","background-color":"yellow","border-radius":"50%","display":"inline-block","margin":"20px","margin-left":"65px"});
+
+            var dot2=$("<div class='dot2'></div>");
+            spot.append(dot2);
+            dot2.css({"width":"10px","height":"10px","background-color":"green","border-radius":"50%","display":"inline-block","margin":"20px"});
+
+            var dot3=$("<div class='dot3'></div>");
+            spot.append(dot3);
+            dot3.css({"width":"10px","height":"10px","background-color":"indigo","border-radius":"50%","display":"inline-block","margin":"20px"});
+
+            //hover 기능 추가
+            //function내부에 this라고 적으면 해당 동작을 실행시킨 원인을 특정할 수 있다.
+            $(".dot1, .dot2, .dot3").mouseover(function(){
+                $(this).css({"background-color":"white"});
+            });
+            $(".dot1, .dot2, .dot3").mouseout(function(){
+                var nm=$(this).attr("class");
+               
+                if(nm=="dot1"){
+                    $(this).css({"background-color":"yellow"});
+                }
+                else if(nm=="dot2"){
+                    $(this).css({"background-color":"green"});
+                    
+                }else if(nm=="dot3"){
+                    $(this).css({"background-color":"indigo"});
+
+                }
+            });
+
+            //dot클릭 시 동작하도록 하는 부분
+            $(".dot1, .dot2, .dot3").click(function(){
+                var nm=$(this).attr("class");
+                if(nm=="dot1"){
+                    point=0;
+                }
+                else if(nm=="dot2"){
+                    point=-400;
+
+                }
+                else if(nm=="dot3"){
+                    point=-800;
+                    
+                }
+                $(".pan").animate({"left":point+"px"});
+            });
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,222 @@
+#footer{
+    width:1240px;
+    /*height:500px;*/
+    /*반응형에서 height가 변동하는 요소는 height를 주지 않는다. div를 몇개 만들지 기준점이 된다.*/
+    background-color: aquamarine;
+    margin: 0 auto;
+}
+.spot{
+    background-color: orange;
+    font-size: 0px;
+   
+}
+.bottom{
+   background-color: yellow;
+}
+.spot > div{
+    display:inline;
+    font-size: 14px;
+}
+.logo1{
+    width:150px;
+    height:100px;
+    background-color: green;
+    font-size:30px;
+    font-weight: bold;
+    color:white;
+    line-height:100px;
+    text-align: center;
+}
+.logo2{
+    width:150px;
+    height:100px;
+    background-color: blue;
+    font-size:20px;
+    font-weight: bold;
+    color:white;
+    line-height:100px;
+    text-align: center;
+}
+.bottom > div{
+    float: left;
+}
+
+/*float을 띄운 요소의 부모의 after위치에 작성*/
+/*float으로 인한 부모요소의 면적 소멸을 방지*/
+.bottom::after{
+    /* content:"이 친구가 면적을 유지_Css로 만든 그림이다."; */
+    content:"";
+    display: block;
+    clear:both;
+}
+.copy{
+    width:calc(100% - 300px);
+    height:100px;
+    background-color: navy;
+    color:white;
+}
+.address{
+    padding-top: 30px;
+}
+.right{
+    font-weight: 600;
+}
+/* 가변형 레이아웃 */
+
+/*block태그 : div*/
+/*width가 없으면 너비는  100%*/
+/*width를 주더라도 나머지가 margin이라 다른요소가 못옴*/
+/*블락태그가 아니라면 width와 height를 줘도 가질 수 없고  margin을 가질 수 없다.*/
+/*height가 없으면 높이는 내부요소의 높이합니다.*/
+/*width,height를 가질 수 있다*/
+/*한 줄에 하나만 들어갈 수 있다.*/
+
+/*inline태그 : span*/
+/*최고의 단점 : width와 height를 가질 수 없다. 면적을 가질 수 없다*/
+/*요소가 문자처럼 옆으로 나란하게 이동한다.*/
+/*글자라는 단점 :  폰트 띄어쓰기의 여백이 생긴다.
+  해결방법  
+   1. 여백을 주석으로 막는다. 
+   2. 부모요소의 폰트사이즈를 0px;로 준다*/
+
+/*inline-block*/
+/*block처럼 면적을 가지면서도 inline의 문자형태도 가짐
+ *가장 큰 요소의 맨 아랫쪽을 기준으로 나열
+ *내부에 문자가 있다면 가장 큰 문자의 아랫쪽을 기준
+*/   
+/*block을 float한 경우 첫째 요소의 위를 기준*/
+/*inline-block을 나영한 경우 가장 큰 요소의 아래를 기준*/
+/* div{
+    width:100px;
+    height: 900px;
+    background-color: black;
+    color: white;
+    display: block;
+  
+    
+}
+.C{
+    width: 200px;
+    height: 200px;
+    font-size: 40px;
+    
+}
+u{
+    font-size:30px;
+
+} */
+
+.or{
+    display: inline-block;
+    width:20px;
+    text-align: center;
+    font-size: 14px;
+    
+}
+.hidden{
+    background-color: pink;
+    width:225px;
+    margin: 0 auto;
+    display: none;
+
+}
+.hidden select{
+    width:170px;
+    height:30px;
+    border-radius: 5px;
+
+}
+.btn{
+    width:50px;
+    height:30px;
+    background-color: blue;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    line-height:30px;
+    float: right;
+}
+
+
+@media screen and (max-width:1239px){
+    #footer{
+        width:100%;
+    }
+}
+@media screen and (max-width:960px){
+    #footer{
+        width:100%;
+    }
+    .logo1{
+        width:100%;
+    }
+    .copy{
+        width:100%;
+        text-align:center;
+    }
+    .logo2{
+        width:100%;
+    }
+    .spot > div{
+        display:block;
+        float:left;
+        width:25%;
+        text-align:center;
+    }
+    .spot > div:last-child{
+        width:100%;
+    }
+    .or{
+        display:none;
+    }
+    .spot:after{
+        content:"";
+        clear:both;
+        display:block;
+    }
+}
+
+@media screen and (max-width:765px){
+    .logo1{
+        width:100%;
+    }
+    .copy{
+        width:100%;
+        text-align:center;
+    }
+    .logo2{
+        width:100%;
+    }
+    .spot > div{
+        display:block;
+        float:left;
+        width:25%;
+        text-align:center;
+    }
+    .spot > div:last-child{
+        width:100%;
+    }
+    .or{
+        display:none;
+    }
+    .spot:after{
+        content:"";
+        clear:both;
+        display:block;
+    }
+    .hidden{
+        display: block;
+    }
+}
+
+@media screen and (max-width:600px){
+    .spot > div{
+        width:calc(100% / 3);
+    }
+    .spot >div:nth-last-child(3){
+        width: 50%;
+    }
+    .spot > div:last-child{
+        width: 50%;
+    }
+}

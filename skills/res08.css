@@ -1,0 +1,75 @@
+
+#wrap{
+    width:900px;
+    background-color: red;
+    margin:0 auto;
+}
+.header{
+    height:200px;
+    background-color: orange;
+}
+.content{
+    width:100%;
+    background-color: yellow;
+}
+.footer{
+    height:200px;
+    background-color: blue;
+}
+.A{
+    width:70%;
+    height:200px;
+    background-color: green;
+    
+}
+.B{
+    width:30%;
+    height:200px;
+    background-color: navy;
+}
+.C{
+    width:calc(100% / 3);
+    height:200px;
+    background-color: purple;
+    /* clear:both; 플롯된 기준점을 다시 잡는다. 초기화된다. */
+
+}
+.D{
+    width:calc(100% / 3);
+    height:200px;
+    background-color: black;
+}
+.E{
+    width:calc(100% / 3);
+    height:200px;
+    background-color: pink;
+}
+.content > div{
+    float:left;
+   
+}
+/*clearfix*/
+/*float으로 인한 부모요소의 height유실 문제를 방지*/
+.content:after{
+    content:" ";
+    clear:both;
+    display: block;
+}
+
+
+@media screen and (max-width:899px){
+    #wrap{
+        width:100%;
+    }  
+    .A{
+        width:100%;
+    } 
+    .B,.C,.D,.E{
+        width:50%;
+    }
+}
+@media screen and (max-width:599px){
+    .B,.C,.D,.E{
+        width:100%;
+    }
+}

@@ -1,0 +1,138 @@
+#footer{
+    width:900px;
+    /*height:500px;*/
+    /*반응형에서 height가 변동하는 요소는*/
+    /*height를 주지 않는다.*/
+    background-color:red;
+    margin:0 auto;
+}
+.spot{
+    background-color:orange;
+    font-size:0;
+}
+.bottom{
+    background-color:yellow;
+}
+.spot > div{
+    display:inline;
+    font-size:16px;
+}
+.logo1{
+    width:150px;
+    height:100px;
+    background-color:green;
+    font-size:30px;
+    font-weight:bold;
+    color:white;
+    line-height:100px;
+    text-align:center;
+}
+.logo2{
+    width:150px;
+    height:100px;
+    background-color:blue;
+    font-size:20px;
+    font-weight:bold;
+    color:white;
+    line-height:100px;
+    text-align:center;
+}
+.bottom > div{
+    float:left;
+}
+/*float을 띄운 요소의 부모의 after위치에 작성*/
+/*float으로 인한 부모요소의 면적 소멸을 방지*/
+.bottom:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+.copy{
+    width:calc(100% - 300px);
+    height:100px;
+    background-color:navy;
+}
+.address{
+    color:white;
+    padding-top:30px;
+}
+.right{
+    color:white;
+    font-weight:600;
+}
+.or{
+    display:inline-block;
+    width:20px;
+    text-align:center;
+    font-size:16px;
+}
+.hidden{
+    background-color:pink;
+    width:250px;
+}
+.hidden select{
+    width:170px;
+    height:30px;
+}
+.btn{
+    width:50px;
+    height:30px;
+    background-color:blue;
+    text-align:center;
+    color:white;
+    font-weight:600;
+    line-height:30px;
+}
+@media screen and (max-width:899px){
+    #footer{
+        width:100%;
+    }
+    .logo1{
+        width:100%;
+    }
+    .copy{
+        width:100%;
+        text-align:center;
+    }
+    .logo2{
+        width:100%;
+    }
+    .spot > div{
+        display:block;
+        float:left;
+        width:25%;
+        text-align:center;
+    }
+    .spot > div:last-child{
+        width:100%;
+    }
+    .or{
+        display:none;
+    }
+    .spot:after{
+        content:"";
+        clear:both;
+        display:block;
+    }
+}
+/*block태그 : div*/
+/*width가 없으면 너비는 100%*/
+/*width를 주더라도 나머지가 margin이라 다른요소가 못옴*/
+/*height가 없으면 높이는 내부요소의 높이합이다*/
+/*width, height를 가질 수 있다.*/
+/*한 줄에 하나만 들어갈 수 있다.*/
+
+/*inline태그 : span*/
+/*width와 height를 가질 수 없다*/
+/*요소가 문자처럼 옆으로 나란하게 이동한다*/
+/*inline은 문자와 동일해서 들여쓰기에도 영향을 받음*/
+/*1. 주석을 이용해서 들여쓰기를 소거*/
+/*2. 부모요소의 font-size를 0으로 변경*/
+
+/*inline-block*/
+/*block처럼 면적을 가지면서도 inline의 문자형태도 가짐*/
+/*가장 큰 요소의 맨 아랫쪽을 기준으로 나열*/
+/*내부에 문자가 있다면 가장 큰 문자의 아랫쪽을 기준*/
+
+/*block을 float한 경우 가장 첫째 요소의 위를 기준*/
+/*inline-block을 나열한 경우 가장 큰 요소의 아래를 기준*/

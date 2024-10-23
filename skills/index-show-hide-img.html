@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>이미지불러오기</title>
+        <meta charset="utf-8">
+       
+        <style>
+            #wrap{
+                width:450px;
+                height:600px;
+                border:1px solid #000;
+                margin:0 auto;
+            }
+            .img{
+                width:400px;
+                height:300px;
+                border:1px solid #000;
+                margin: 0 auto;
+                margin-top: 25px;
+                
+            }
+            .btn1{
+                position: relative;
+                top:-35px;
+                left:36px;
+                width: 130px;
+                height:30px;
+                background-color: rgba(255,255,255,0.5);
+                border: none;
+            }
+
+            .sangse{
+                width:400px;
+                height:200px;
+                
+                margin: 0 auto;
+                margin-top: 25px;
+                display: none;
+            }
+
+            .btn2{
+                position: relative;
+                top:25px;
+                left:8px;
+                width: 130px;
+                height:30px;
+                background-color: rgba(255,255,255,0.5);
+                border: 1px solid black;
+                
+            }
+            p{
+                font-size:14px;
+                text-align:justify;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="wrap">
+            <div class="img">
+                <img src="imgs/flower.jpg" alt="꽃">
+            </div>
+            
+                <button onclick="Open()" class="btn1">상세 설명 보기</button>
+            <div class="sangse">
+                <h3>등심붓꽃</h3>
+                <p>
+                    북아메리카 원사으로 각지에서 관상초로 흔히 심고 있는 귀화식물이다.
+                    길가나 잔디밭에서 흔히 볼 수 있다. 
+                    아주 작은 씨앗을 무수히 많이 가지고 있는데 바람을 이용해 씨앗들을 날려보내거나, 
+                    뿌리줄기를 통해 동일한 객체들을 많이 만들어 냄으로써 번식한다.
+                </p>
+                <button onclick="Close()" class="btn2">상세 설명 닫기</button>
+            </div>
+
+        </div>
+
+
+        <script>
+            
+            function Open(){
+                document.querySelector(".btn1").style.display="none";
+                document.querySelector(".sangse").style.display="block";
+            }
+
+            function Close(){
+                document.querySelector(".btn1").style.display="block";
+                      
+                document.querySelector(".sangse").style.display="none";
+
+            }
+            
+           
+           /*
+            const btn2=document.querySelector('.btn2');
+            btn2.onclick = function button() {document.getAnimations.css("display", "none") };
+           
+
+            $(".list").click(function(){
+            $("#modal").css("display","block");
+        });
+        $(".close").click(function(){
+            $("#modal").css("display","none");
+        });
+
+           */
+
+        </script>
+        
+    </body>
+</html>

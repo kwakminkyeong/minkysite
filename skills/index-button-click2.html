@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+    </head>
+    <style>
+        .imge{
+            display: none;
+        }
+    </style>
+    <body>
+        <button onclick="does()">보여라!</button>
+        <button id="close" onclick="myclose()">감추기</button>
+        <div class="imge">
+            <img src="imgs/flower1.jpg" alt="flower">
+        </div>
+
+        <script>
+            // document.querySelector("button").onclick=function(){
+            //     document.querySelector(".imge").style.display="block";
+            // }
+
+            // document.querySelector("#close").onclick=function(){
+            //     document.querySelector(".imge").style.display="none";
+            // }
+
+                function does(){
+                    let picture=document.querySelector(".imge");
+                    picture.style.display="block";
+                }
+                function myclose(){
+                    let picture1=document.querySelector(".imge");
+                    picture1.style.display="none";
+                }
+
+        </script>
+    </body>
+</html>
