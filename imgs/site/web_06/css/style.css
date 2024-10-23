@@ -1,0 +1,323 @@
+*{
+    color:#333333;
+}
+a{
+    text-decoration:none;
+}
+html, body{
+    height:100%;
+}
+#wrap{
+    width:100%;
+    height:100%;
+    min-width:600px;
+    min-height:700px;
+}
+.top{
+    width:100%;
+    height:calc(100% - 120px);
+}
+.D{
+    width:100%;
+    height:120px;
+}
+.A{
+    width:200px;
+    height:100%;
+    float:left;
+}
+.C{
+    width:400px;
+    height:100%;
+    float:left;
+}
+.B{
+    width:calc(100% - 600px);
+    height:100%;
+    float:left;
+    overflow:hidden;
+}
+.logo{
+    width:200px;
+    height:100px;
+    line-height:127px;
+    text-align:center;
+}
+.menus{
+    width:160px;
+    height:200px;
+    margin: 20px;
+
+}
+.banner{
+    width:400px;
+    height:10%;
+
+}
+.gongji{
+    width:400px;
+    height:40%;
+    
+}
+.gallery{
+    width:400px;
+    height:40%;
+}
+.link{
+    width:400px;
+    height:10%;
+}
+.slide{
+    width:100%;
+    height:100%;
+}
+.pan{
+    width:400%;
+    height:100%;
+    position:relative;
+}
+.slide1{
+    width:calc(100% / 4);
+    height:100%;
+    background-color:yellow;
+    float:left;
+}
+.slide2{
+    width:calc(100% / 4);
+    height:100%;
+    background-color:orange;
+    float:left;
+}
+.slide3{
+    width:calc(100% / 4);
+    height:100%;
+    background-color:green;
+    float:left;
+}
+
+.logo2{
+    width:200px;
+    height:120px;
+    float:left;
+    line-height:155px;
+    text-align:center;
+}
+.sitemap{
+    width:calc(100% - 400px);
+    height:120px;
+    float:left;
+}    
+.family{
+    
+    background-color: white;
+    float:left;
+    width:150px;
+    height:40px;
+    border:1px solid black;
+    margin-left:25px;
+    margin-top:40px;
+    border-radius:10px;
+    text-align:center;
+    
+    
+}
+ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+li{
+    width:160px;
+    height:50px;
+    text-align:center;
+    line-height:50px;
+}
+li:hover{
+    width:160px;
+    height:50px;
+    background-color:black;
+    
+}
+li:hover a{
+    color:white;
+}
+.main{
+    
+    position:relative;
+    font-weight:bold;
+    z-index: 3;
+}
+
+.sub{
+    position: absolute;
+    background-color:rgba(0,0,0,0.8);
+    left:160px;
+    top:0px;
+    display: none;
+}
+.sub li{
+    font-weight:lighter;
+    font-size:14px;
+}
+.sub li:hover a{
+   
+    color:#333333;
+}
+.sub li:hover{
+    background-color: #b07517;
+    color:#333333;
+}
+.banner div{
+    width:100%;
+    height:100%;
+    
+    
+}
+.banner img{
+    width:400px;
+    height:100%;
+}
+.gongpan{
+    width:100%;
+    height:80%;
+    padding-top: 20%;
+    position: relative;
+}
+.gongbtn{
+    width:100px;
+    height:50px;
+    text-align:center;
+    line-height:50px;
+    font-weight:bold;
+}
+.gonglist{
+    width:300px;
+    height:200px;
+    float: left;
+}
+.date{
+    width:100px;
+    height:200px;
+    position: absolute;
+    top:130px;
+    left:300px;
+    
+}
+.date div{
+    width:100px;
+    height:50px;
+    line-height:50px;
+    font-size:13px;
+    text-align:center;
+}
+.gonglist div{
+    width:290px;
+    height:50px;
+    line-height:50px;
+    font-size:13px;
+    padding-left:10px;
+}
+
+.gallpan{
+    width:400px;
+    height:250px;
+    padding-top: 20%;
+}
+.gallbtn{
+    width:100px;
+    height:50px;
+    text-align:center;
+    line-height:50px;
+    font-weight:bold;
+
+}
+.gallimg{
+    width:400px;
+    height:200px;
+}
+.gallimg div{
+    width:150px;
+    height:150px;
+    margin: 25px;
+    float:left;
+}
+.link div{
+    width:100px;
+    height:100%;
+    float:left;
+}
+.link img{
+    width:100px;
+    height:100%;
+}
+.hadan{
+    width:calc(100% - 100px);
+    height:60px;
+    margin: auto;
+}
+.hadan div{
+    height:60px;
+    float:left;
+    line-height:100px;
+    text-align:center;
+    padding-left:20px;
+    font-size:14px;
+    
+}
+.copy{
+    width:100%;
+    height:60px;
+    line-height: 0px;
+    font-size:14px;
+    padding-left:68px;
+}
+.pan img{
+    width:100%;
+    height:100%;
+}
+
+#modal{
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.7);
+    position: relative;
+    top:-100%;
+    z-index: 99;
+    display:none;
+}
+
+.popup{
+    width:450px;
+    height:350px;
+    background-color: white;
+    position:absolute;
+    top:200px;
+    left:40%;
+    border-radius:15px;
+}
+.title{
+    width:450px;
+    height:100px;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    line-height:100px;
+}
+.nayong{
+    width:450px;
+    height:200px;
+    text-align:center;
+    line-height:58px;
+}
+.close{
+    width:450px;
+    height:50px;
+    line-height:22px;
+    margin-left: 379px;
+}
+.close p{
+    width:50px;
+    height:20px;
+    border:1px solid black;
+
+}
