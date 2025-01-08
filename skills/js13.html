@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>드래그 도형 이동처리</title>
+        <meta charset="utf-8">
+        <style>
+            #wrap{
+                width:500px;
+                height: 500px;
+                border: 5px solid black;
+                margin: 0 auto;
+            }
+            #box{
+                width:50px;
+                height:50px;
+                background-color: orange;
+                position: relative;
+                top:0px;
+                left:0px;
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="box" draggable="true"></div>
+        </div>
+        <script>
+            var box=document.getElementById("box");
+            // console.log(box);
+            var Bleft=0;    //현재 공의 기준x 좌표, 그림을 그리는 용도로 사용
+            var Btop=0;     //현재 공의 기준y 좌표, 그림을 그리는 용도로 사용
+            var pointX=0;   //마우스가 클릭된 x좌표값
+            var pointY=0;   //마우스가 클릭된 y좌표값
+            box.addEventListener("dragstart",function(e){
+                pointX=e.offsetX;
+                pointY=e.offsetY;
+            });
+            box.addEventListener("dragend",function(e){
+                // console.log("클릭된 x 좌표 : "+e.offsetX);
+                // console.log("클릭된 y 좌표 : "+e.offsetY);
+                // console.log("현재 공의 기준 x좌표 : "+Bleft);
+                // console.log("현재 공의 기준 y좌표 : "+Btop);
+                pointX-=e.offsetX;
+                pointX*=-1;
+                Bleft+=pointX;
+                pointY-=e.offsetY;
+                pointY*=-1;
+                Btop+=pointY;
+                box.setAttribute("style","left:"+Bleft+"px; top:"+Btop+"px;");
+            });
+        </script>
+    </body>
+</html>

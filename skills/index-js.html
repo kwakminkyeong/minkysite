@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <title>자바스크립트 예제</title>
+        <meta charset-"utf-8">
+    </head>
+    <body>
+        
+        <script>
+            var today = new Date();
+            document.write(today+"<br>");
+            var h=today.getHours();
+            var m=today.getMinutes();
+            var s=today.getSeconds();
+            var w=today.getDay();
+            var temp=" ";
+            
+            switch(w)
+            {
+                case 1:
+                    temp="월";
+                    break;
+                case 2:
+                    temp="화";
+                    break;
+                case 3:
+                    temp="수";
+                    break;
+                case 4:
+                    temp="목";
+                    break;
+                case 5:
+                    temp="금";
+                    break;
+                case 6:
+                    temp="토";
+                    break;
+                case 0:
+                    temp="일"; 
+            }
+
+            document.write("지금은 "+h+"시 "+m+"분 "+s+"초 "+temp+"요일");
+
+            // alert("안녕하세요~");
+            var reply=confirm("정말 배경 이미지를 바꾸겠습니까?");
+            
+            
+            //만약 확인을 누르면 삭제되었습니다. 알림창 보여주세요.
+            //그렇지 않으면 취소되었습니다. 알림창 보여주세요.
+
+        //     if(reply==true){
+            if(reply){
+                 alert("삭제되었습니다.");
+                 reply=confirm("복구?");
+                 
+                 if(reply){
+                    alert("복구되었습니다");
+                    
+                 }
+                 else{
+                    alert("취소되었습니다");
+                   
+                 }
+            }
+            else{
+                alert("취소되었습니다.");
+                var name="고희동";
+                alert(name);
+                name=prompt("이름을 입력하세요","아무개"); 
+                alert(name);
+                name=prompt("이름을 입력하세요","아무개"); 
+                alert(name);
+                name=prompt("이름을 입력하세요","아무개"); 
+                alert(name);
+            }
+
+            
+
+        </script>
+    </body>
+</html>

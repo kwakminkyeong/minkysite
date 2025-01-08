@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>내경사이즈 확인</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1 id="h">사이즈</h1>
+        <input type="button" value="클릭!" id="btn">
+        <script>
+            function test(){
+                let h=document.getElementById("h");
+                let size=window.innerWidth;
+                h.innerHTML=size+"px";
+            }
+
+            // let btn=document.getElementById("btn");
+           
+            // btn.addEventListener("click", function(){
+            //     alert("클릭확인!");
+            // });
+            
+
+
+
+            window.addEventListener("resize", function(){
+                let h=document.getElementById("h");
+                let size=window.innerWidth;
+                h.innerHTML=size+"px";
+
+                if(size>1000){
+                    h.setAttribute("style", "color:red;");
+                }else if(size>800){
+                    h.style.color="blue";
+                }else if(size>600){
+                    h.style.color="green";
+                }
+            });
+        </script>
+    </body>
+</html>

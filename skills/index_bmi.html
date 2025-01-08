@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <title>BMI지수 구하는 프로그램</title>
+        <meta chasrset="utf-8">
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="weight"></div>
+            <div class="height"></div>
+            <div class="BMI"></div>
+        </div>
+        <script>
+            //비만도측정(BMI지수)
+            //BMI를 이용한 비만도 계산은
+            //자신의 몸무게를 키의 제곱으로 나누는 것으로
+            //공식은 kg/㎡
+            //BMI가 18.5 이하면 저체중
+            //18.5~22.99 사이면 정상
+            // 23.0~24.9 사이면 과체중
+            //25.0 이상부터는 비만으로 판정
+            //bmi=몸무게/(키*키)
+
+            //var weight
+            //prompt("체중?")
+            //var height
+            //prompt("키?")
+            //var bmi
+            //alert("BMI")
+
+            var weight=prompt("당신의 체중을 kg으로 입력해주세요");
+
+           
+            var height=prompt("당신의 키를 cm로 입력해주세요");
+            var bmi=(weight/(height*height)*10000);
+            alert("당신의 BMI는 "+bmi.toFixed(2) + " 입니다.");
+            if(bmi<=18.5){
+                alert("당신은 저체중입니다. 많이먹어봐요~")
+            }
+            else if(bmi <=22.9){
+                alert("당신의 체중은 정상입니다. 좋습니다!")
+            }
+            else if(bmi <=24.99){
+                alert("당신은 과체중 입니다. 다이어트를 고민해보세요.")
+            }
+            else if(bmi >=25.0){
+                alert("당신의 체중은 비만입니다. 다이어트 시작!")
+            }
+            else{
+                alert("안내사항을 읽고 답해주세요")
+            }
+            alert("이용해 주셔서 감사합니다");
+        </script>
+        
+    </body>
+
+</html>

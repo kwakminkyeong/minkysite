@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>드래그 앤 드롭</title>
+        <meta charset="utf-8">
+        <style>
+            #container{
+                /*외부면적을 한정지으면 float에서 아래로 떨어지는 현상 방지 가능*/
+                width:608px;
+            }
+            .list{
+                float:left;
+                border:1px solid black;
+                width:150px;
+                height:400px;
+            }
+            .list h1{
+                text-align:center;
+            }
+            .list .item{
+                background-color:lightgray;
+                border-radius: 10px;
+                margin:20px;
+                padding:20px;
+            }
+            #container:after{
+                content:"";
+                clear:both;
+                display:block;
+            }
+
+            /*효과를 주기 위한 클래스*/
+            .invisible{
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div class="list">
+                <h1>과목선택</h1>
+                <div class="item" draggable="true">Javascript</div>
+                <div class="item" draggable="true">HTML</div>
+                <div class="item" draggable="true">CSS</div>
+                <div class="item" draggable="true">jQuery</div>
+            </div>
+            <div class="list">
+                <h1>수강과목</h1>
+            </div>
+            <div class="list">
+                <h1>관심분야</h1>
+            </div>
+            <div class="list">
+                <h1>학습완료</h1>
+            </div>
+        </div>
+        <script>
+            var items=document.getElementsByClassName("item");
+            var lists=document.getElementsByClassName("list");
+            console.log(items);
+            console.log(lists);
+
+            /*구현 시작*/
+            var dragItem=null; //드래그 중인 아이템을 저장할 변수
+            var dragList=null; //놔둘 위치
+            function dragStart() {
+                dragItem = this;
+                console.log("======================================");
+                console.log('=============드래그 시작===============');
+                console.log(dragItem);
+                console.log("======================================");
+            }
+
+            function dragEnd() {
+                console.log("======================================");
+                console.log('=============드래그 종료===============');
+                console.log(this);
+                console.log("======================================");
+                this.className = 'item';    //나중에 지워지는 기능 구현한 뒤에 집어넣어 줄 것
+                dragItem = null;
+            }
+
+            var i;
+            for(i=0; i<items.length; i++){
+                items[i].addEventListener("dragstart", dragStart);
+                items[i].addEventListener("dragend", dragEnd);
+            }
+
+            /*동작 테스트용 함수 제작*/
+            function dragOver(e) {  //위에 드래그 상태로 올라와 있는 동안 반복해서 수행됨
+                e.preventDefault(); //오버가 수행중이라면 드롭이 발생하지 않는다. 따라서 방지해주어야 한다.
+                /*console.log('드래그 오버 이벤트가 실행되었습니다.');
+                console.log(e.target);  //e.target과 this가 동일한 이벤트 발생의 주체이다.
+                console.log(this);*/
+            }
+            function dragEnter(){   //드래그 상태로 리스트 위로 올라오는 순간 1회만 수행됨
+                /*console.log("드래그 엔터 이벤트가 실행되었습니다.");*/
+                dragList=this;
+            }
+            function dragLeave(){   //드래그 상태로 리스트를 벗어나는 순간 1회만 수행됨
+                /*console.log("드래그 리브 이벤트가 실행되었습니다.");*/
+            }
+            function dragDrop() {   //위에서 드랍(마우스 클릭을 뗌)시키는 순간 실행됨
+                /*console.log('드래그 드랍 이벤트가 실행되었습니다.');*/
+                this.append(dragItem);
+            }
+
+            for(i=0; i<lists.length; i++){
+                lists[i].addEventListener("dragover", dragOver);
+                lists[i].addEventListener("dragenter", dragEnter);
+                lists[i].addEventListener("dragleave", dragLeave);
+                lists[i].addEventListener("drop", dragDrop);
+            }                
+        </script>
+    </body>
+</html>

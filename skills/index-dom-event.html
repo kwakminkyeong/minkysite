@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>innerimg()</title>
+        <meta charset="urf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #log{
+                width:400px;
+                height:400px;
+                border:2px solid black;
+
+            }
+        </style>
+    </head>
+    <body>
+        <p>아무 키를 누르거나 마우스를 클릭해서 이벤트 유형을 알아보세요</p>
+        <p id="log"></p>
+
+        <script>
+            const log=document.getElementById("log");
+            function getEventType(event){
+                //const log=document.getElementById("log");
+                log.innerText=event.type+"\n"+log.innerText;
+            }
+           
+
+
+
+
+        </script>
+    </body>
+</html>

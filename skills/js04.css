@@ -1,0 +1,139 @@
+#wrap{
+    width:600px;
+    /* height:100px; */
+    margin:0 auto;
+    background-color: red;
+    /* padding: 10px; */
+}
+#wrap::after{ /*면적소실문제 float기능을 정지해 준다*/
+    content: "";
+    display: block;
+    clear: both;
+}
+.slide{
+    width:400px;
+    height:200px;
+    background-color: orange;
+    position:  relative; /*버튼 배치를 위한 포지션*/
+     overflow: hidden;
+}
+.A{
+    width:200px;
+    height:200px;
+    background-color: yellow;
+}
+.B{
+    width:200px;
+    height:200px;
+    background-color: green;
+}
+.C{
+    width:200px;
+    height:200px;
+    background-color: blue;
+}
+.D{
+    width:200px;
+    height:200px;
+    background-color: navy;
+}
+#wrap > div{
+    float: left;
+}
+.pan{
+    height:200px;
+    width:1200px;
+    background-color: purple;
+    position: relative; /*이동을 위한 포지션*/
+    left: 0px;
+    transition:1s;
+  
+}
+.img1{
+    background-color: coral;
+    font-size: 60px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 200px;
+    height:200px;
+    width:400px;
+    float: left;
+}
+.img2{
+    background-color: orangered;
+    font-size: 60px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 200px;
+    height:200px;
+    width:400px;
+    float: left;
+}
+.img3{
+    background-color: gold;
+    font-size: 60px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 200px;
+    height:200px;
+    width:400px;
+    float: left;
+}
+.btn-left{
+    width:50px;
+    height:200px;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    font-size: 60px;
+    color:white;
+    font-weight: 600;
+    line-height: 200px;
+    text-align: center;
+}
+.btn-right{
+    width:50px;
+    height:200px;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    font-size: 60px;
+    color:white;
+    font-weight: 600;
+    line-height: 200px;
+    text-align: center;
+}
+.control{
+    width:50px;
+    height:20px;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top:0px;
+    left:175px;
+}
+.control > div{
+    width:25px;
+    height:20px;
+    float: left;
+    color:white;
+}
+.mark{
+    width:50px;
+    height:20px;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    bottom:0px;
+    left: 175px;
+}
+.mark > div{
+    width:10px;
+    height:10px;
+    background-color: white;
+    float: left;
+    border-radius: 50%;
+    margin-top: 5px;
+    margin-left: 5px;
+
+}

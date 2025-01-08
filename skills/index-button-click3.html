@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+    </head>
+    <style>
+        .imge{
+            display: none;
+        }
+    </style>
+    <body>
+        <button>show</button>
+        <button >hidden</button>
+        <div class="imge">
+            <img src="imgs/flower1.jpg" alt="flower">
+        </div>
+
+        <script>
+        //     function show(){
+        //         let myImage=document.querySelector(".image");
+        //         myImage.style.display="block";
+        //     }
+        
+        
+        //   let btn=document.querySelector("button:first-child");
+        //   btn.click=show;
+
+        document.querySelector("button:first-child").onclick=function(){
+            document.querySelector(".imge").style.display="block";
+        }
+        document.querySelector("button:nth-child(2)").onclick=function(){
+            document.querySelector(".imge").style.display="none";
+        }
+
+        </script>
+    </body>
+</html>

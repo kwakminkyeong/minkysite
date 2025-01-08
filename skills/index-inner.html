@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>D-Day</title>
+        <meta charset="utf-8">
+        <style>
+            /* div{
+                width:300px;
+                height:300px;
+                border-radius: 50%;
+                margin: 0 auto;
+                background-color: lightseagreen;
+                color:white;
+                font-weight: 600;
+            } */
+        </style>
+    </head>
+    <body>
+        <div id="current"> </div>
+
+        <script>
+            let date=new Date();
+            let dateDDay=new Date("2023-11-16");
+            let crr=document.getElementById("current");
+
+            let dateTime=date.getTime(); //밀리세컨드의 값으로 반환
+            let dateDDayTime=dateDDay.getTime();
+            let diffTime=dateDDayTime-dateTime;
+            let day=parseInt((((diffTime/1000)/60)/60)/24)+1+"일";   //밀리//초//분//시간//일
+
+            //1일 = 24시간  //1시간 60분 // 1분 60초
+            //2일 = 48시간*60분=2880분 *60초=172800초*1000 밀리세컨드 = 172800000
+
+          
+            // document.write(dateTime);
+            // document.write("<br>");
+            // document.write(dateDDayTime);
+
+           
+            crr.innerHTML="수능일까지<br> 화이팅!!<br>";
+            crr.style.backgroundColor="lightseagreen";
+            crr.style.width="300px";
+            crr.style.height="300px";
+            crr.style.borderRadius="10%";
+            crr.style.textAlign="center";
+            crr.style.color="white";
+            crr.style.fontSize="38px";
+            crr.style.lineHeight="65px";
+            // crr.style.fontWeight="600";
+            crr.style.margin="0 auto";
+            // crr.style.padding="75px";
+            crr.style.text
+
+            //원이 클릭이 되면(mouseenter) 날짜를 보여주세요.
+            crr.onclick=function(){
+                crr.style.backgroundColor="coral";
+                crr.innerHTML="D-Day <br><h2>"+day+"<br>남았습니다.</h2>";
+               
+               
+            }
+           
+
+
+            // crr.addEventListener("click, myDo");
+            // crr.addEventListener("mouseenter, myDo");
+            // crr.setAttribute("background-color","red");
+
+            // function myDo(){
+            //     crr.innerHTMl="<h1>"+day+"</h1>";
+            //     crr.setAttribute("background-color","red");
+            // }
+
+            
+
+
+         </script>   
+
+    </body>
+</html>

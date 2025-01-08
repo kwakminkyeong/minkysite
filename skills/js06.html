@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <title>jQuery읽기</title>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <h1 id="test">이 태그를 불러옴</h1>
+        <script>
+            var t=document.getElementById("test");
+            t.addEventListener("click",function(){  //t.click(function(){
+                                                                        // alert("동작확인"); 
+                                                                        // });와 같다
+                alert("동작확인");
+            });
+            // t.style.color="red";
+            console.log(t);
+
+            
+            var y=$("#test"); //https://code.jquery.com/jquery-3.6.0.min.js 에서 만들어진 $이다. 아이디가 테스트인 값을 y에 넣어주고
+            y.css("color","green"); //https://code.jquery.com/jquery-3.6.0.min.js 에서 만들어진 css이다.  와이의 css 칼라를 그린으로 변경
+            console.log(y);
+        </script>
+    </body>
+</html>

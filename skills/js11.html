@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>마우스로 도형 이동</title>
+        <meta charset="utf-8">
+        <style>
+            #wrap{
+                width:500px;
+                height:500px;
+                margin: 0 auto;
+                border: 5px solid black;
+            }
+            #box{
+                width:50px;
+                height:50px;
+                background-color: red;
+                border-radius: 50%;
+                position: relative;
+                top:0px;
+                left:0px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="box"></div>
+        </div>
+
+        <script>
+
+            //clientX : 현재 브라우저 스크롤 이후 좌측 상단을 0으로 측정한 기준값
+            //offsetC : 이벤트 대상 객체의 좌측 상단을 0으로 측정한 기준값
+            //pageX : 현재 브라우저에서 좌측 상단을 0으로 측정한 기준값
+            //screenX : 현재 모니터를 기준으로 좌측 상단을 0으로 측정한 기준값 듀얼 모니터인 경우 둘 사이 중앙에 위치하게 된다.
+            var wrap=document.getElementById("wrap");
+            var Bleft=0;
+            var Btop=0;
+            wrap.addEventListener("mousemove",function(e){
+                //console.log(e.offsetX);
+                if(Bleft+50<e.offsetX){
+                    // Bleft+=10;
+                   
+                    // console.log("도형의 오른쪽이 클릭되었습니다.");
+                    moveRight();
+                }
+                if(Btop+50<e.offsetY){
+                    moveDown();
+                }
+                if(Btop>e.offsetY){
+                    moveUp();
+                }
+                if(Bleft>e.offsetX){
+                    moveLeft();
+                }
+
+                set();
+            });
+            function moveRight(){
+                Bleft+=5;
+            }
+            function moveLeft(){
+                Bleft-=5;
+            }
+            function moveDown(){
+                Btop+=5;
+            }
+            function moveUp(){
+                Btop-=5;
+            }
+            function set(){
+                box.setAttribute("style","left:"+Bleft+"px; top:"+Btop+"px;");
+            }
+            function check(){
+                if(Bleft>500-50){
+                    Bleft=450;
+                }
+                if(Bleft<0){
+                    Bleft=0;
+                }
+                if(Btop>500-50){
+                    Btop=450;
+                }
+                if(Btop<0){
+                    Btop=0;
+                }
+            }
+        </script>
+    
+    </body>
+</html>

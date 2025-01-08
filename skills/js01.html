@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>반복문 처리</title>
+        <meta charset="utf-8">
+        <style>
+            .R{
+                color:blue;
+            }
+            .B{
+                color:red;
+            }
+
+            h1:nth-child(2n+1){
+                background-color:orange;
+            }
+            h1:nth-child(2n){
+                background-color:green;
+            }
+            td{
+                border:1px solid black;
+            }
+        </style>
+
+    </head>
+    <body>
+        <!-- <table>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+        </table> -->
+
+        <script>
+            //반복문 for
+            //for(기준; 조건; 증감){반복할 내용;}
+            //기준 :  컴퓨터는 횟수에 대한 개념이 없으므로 기준점을 제시해 주어야 한다.
+            //조건 :  계산의 결과가 참 또는 거짓으로 표현되는 내용이 들어가야 한다.
+            //증감 : 1회 반복 시 변경할 내용을 적어주어야 한다.
+
+            
+            // for(var a=1; a<4; a+=2){
+            //     console.log(a+"회 반복중.....");
+            //     console.log("여러줄의 명령어가 있어도 다 실행 함");
+            // }
+
+
+            //1에서 99까지 반복시켜 보세요.
+            /*for(var a=1; a<100; a++){ //
+                if(a%2==1){
+                    console.log(a);
+                }
+            }*/
+
+            //짝수만 반복시키기 다양한 여러가지 방법으로 만들 수 있다.
+            // for(var a=1; a<99; a++){ 
+            //     a++;
+            //     console.log(a+"회 반복중....");
+            // }
+
+            // for(var a=2; a<99; a++){ 
+            //     console.log(a+"회 반복중....");
+            //     a++;
+            // }
+
+            // var num=prompt("몇회 출력할지 입력해 주세요");
+            // console.log(num);
+            // var color=" "; //컬러변수를 넣어서 비워놓고
+            // for(var i=1; i<=num; i++){
+            //     if(i%2==0){
+            //         color="R";
+            //     }// if end
+            //     else{
+            //         color="B";
+            //     }//else end
+            //     document.write("<h1 class="+color+">?"+i+"</h1>"); //h1 클래스에 변수컬러를 붙여주고 아이의 변수를 붙여주기 <h1 class=R>1</h1>
+            // }//for end    
+
+
+
+
+            // for(var i=1; i<=num; i++){
+            //     if(i%2==0){
+            //         document.write("<h1 style='color:blue'>"+i+"</h1>");
+            //     }// if end
+            //     else{
+            //         document.write("<h1 style='color:red'>"+i+"</h1>");
+            //     }//else end
+            // }//for end
+
+            var num=10;
+             for(var i=1; i<=num; i++){
+                 document.write("<h1>@"+i+"</h1>");
+            }
+
+
+
+            //이 중 홀수번째 반복은 빨간글씨로 표현해 주세요.
+
+            //테이블 그리기
+            //2차원 for문
+            document.write("<table>");
+            console.log("<table>");
+            for(var z=0; z<3; z++){
+                document.write("<tr>");
+                console.log("<tr>");
+                for(var y=0; y<3; y++){
+                    document.write("<td>"+(y+1+(z*3))+"</td>");
+                    console.log("<td></td>");
+                } //2차 for end
+                document.write("</tr>");
+                console.log("</tr>");
+               
+            } //1차 for end
+            document.write("</table>");
+            console.log("</table>")
+        </script>
+    </body>
+</html>

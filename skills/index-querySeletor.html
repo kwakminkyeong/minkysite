@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>querySelector</title>
+        <meta charset="urf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+           
+        </style>
+    </head>
+    <body>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>10</button>
+    
+       
+        <script>
+            let btns=document.querySelectorAll("button");
+            document.write("버튼의 갯수 : "+btns.length);
+
+            btns[4].style.backgroundColor="red";
+
+            for(let i=0; i<10; i++){
+                btns[i].style.backgroundColor="gold";
+            }
+
+        </script>
+    </body>
+</html>

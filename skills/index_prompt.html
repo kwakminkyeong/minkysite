@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <title>Welcome</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>어서오세요!</h1>
+        <script>
+            var name=prompt("이름을 입력하세요.");
+            console.log(name, '님 환영합니다.');
+            var isLoop=true;
+            console.log(isLoop);
+            var num=5;
+            var num_f=3.14;
+            console.log(num_f);
+
+            var isPlay=false;
+            console.log(isPlay);
+
+            var dept="iot";
+            console.log(dept);
+
+            var thing=document.querySelector("h1");     //찾아서 thing안에 할당해주세요
+            thing.onclick=function(){
+                thing.style.color="red";
+            }
+
+
+
+            var strAge="5"; //string
+            var numAge=5; //number
+            document.write("i"+"o"+"t" +"<br>");
+            var sum1=strAge+strAge;
+            document.write("strAge+strAge=" + sum1+typeof(sum1)+"<br>");
+            var sum2=numAge+numAge;
+            document.write("numAge+numAge=" +sum2+typeof(sum2)+"<br>");
+            var sum3=strAge+numAge;
+            document.write("strAge+numAge= "+sum3+typeof(sum3)+"<br>");
+            document.write(typeof(sum3)+"<br");
+            var sum4=parseInt(strAge)+numAge;
+            document.write(sum4+"<br");
+
+            var season=["봄", "여름", "가을", "겨울"];
+            console.log(season[3]);
+
+            var season2=new Array();
+            season2[0]="봄";
+            season2[1]="여름";
+            season2[2]="가을";
+            season2[3]="겨울";
+            console.log(season2[0]);    
+
+            var season3=[];
+            season3[0]="봄";
+            season3[1]="여름";
+            season3[2]="가을";
+            season3[3]="겨울";
+            season3[4]="other2";
+            season3.push("other"); //끝에 하나를 넣는다
+            console.log(season3);
+
+            season3.pop(); //끝에부터 뺀다. 스택 other 제거
+            console.log(season3);
+
+            season3.pop(); //other2 제거
+            console.log(season3);
+ 
+            season3.pop();  //겨울제거
+            console.log(season3);
+
+            season3.pop(); //가을 제거
+            console.log(season3);
+
+            season3.pop(); //여름제거
+            console.log(season3);
+
+            season3.pop(); //봄제거
+            console.log(season3);
+
+            console.log(season2[1]);
+        </script>
+    </body>
+</html>

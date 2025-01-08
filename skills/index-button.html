@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="urf-8">
+        <style>
+            button{
+                width:80px;
+                height:50px;
+                border: 2px solid #eee;
+                border-radius: 10px;
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="btn1">버튼1</button>
+        <button id="btn2">버튼2</button>
+        <button id="btn3">버튼3</button>
+        <button id="btn4">버튼4</button>
+        
+        
+        <script>
+           document.querySelector("#btn1").onmouseover=function(){
+                this.style.backgroundColor=("red");
+               
+            }
+            document.querySelector("#btn1").onmouseout=function(){
+                this.style.backgroundColor=("white");
+            }
+
+
+            document.querySelector("#btn2").onmouseover=function(){
+                this.style.backgroundColor=("orange");
+            }
+            document.querySelector("#btn2").onmouseout=function(){
+                this.style.backgroundColor=("white");
+            }
+            
+            document.querySelector("#btn3").onmouseover=function(){
+                this.style.backgroundColor=("green");
+            }
+            document.querySelector("#btn3").onmouseout=function(){
+                this.style.backgroundColor=("white");
+            }
+            document.querySelector("#btn4").onmouseover=function(){
+                this.style.backgroundColor=("skyblue");
+            }
+            document.querySelector("#btn4").onmouseout=function(){
+                this.style.backgroundColor=("white");
+            }
+
+            
+
+            
+            
+        </script>
+    </body>
+</html>

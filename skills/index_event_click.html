@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>event mouse</title>
+        <meta charset="utf-8">
+    </head>
+    <style>
+        #wrap{
+            width:1000px;
+            margin: 0 auto;
+        }
+        
+        #wrap>div{
+            width:200px;
+            height:100px;
+            border:2px solid red;
+            border-radius:10px;
+            text-align:center;
+            line-height:100px;
+            float:left;
+            margin-left: 30px;
+            
+        }
+
+        #wrap>.line2{
+            line-height:50px;
+        }
+    </style>
+    <body>
+        <div id="wrap">
+            <div id="event1"> onmouseover</div>
+            <div>onmousemove</div>
+            <div onmouseout='alert("mouseout")' onclick="alert(click())" class="line2">onmouseout <br>
+                onemouseclick</div>
+            <div ondblclick="javascript:alert('onmousemove')">ondblclick</div>
+        </div>    
+        <script>
+           document.querySelector("#event1").onmouseover=function(){
+            alert("onmouseover");
+           }
+
+            //document.querySelector("div:nth-child(2)").onmousemove=move();
+            //38라인을 수행시
+            //onmousemove이벤트가 발생했을 때 move()의 동작을 수행해야하므로
+            function move(){
+                alert("onmousemove");
+            }
+            document.querySelector("div:nth-child(2)").onmousemove=move; //이렇게 사용해야함
+          
+        </script>
+    </body>
+</html>

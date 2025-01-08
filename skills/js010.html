@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>화면움직이기</title>
+        <meta charset="utf-8">
+        <style>
+            #wrap{
+                width:500px;
+                height:500px;
+                border: 5px solid black;
+                margin: 0 auto;
+            }
+            #box{
+                width:50px;
+                height: 50px;
+                background-color: blue;
+                position: relative; 
+                top:0px;
+                left:0px;
+                border-radius: 50%;   /*도형이 원이지만 기준점은 사각형 좌측 왼쪽에 있다.*/
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="box"></div>
+        </div>
+        <script>
+            var box=document.getElementById("box");
+            var Bleft=0;
+            var Btop=0;
+           
+            
+
+            window.addEventListener("keydown",function(e){ /*어떤 동작이 발생했을 때 구분할 수 있는 매개변수가 들어간다.*/
+                //console.log(e.code); /*키보드가 다르기 떄문에 code로 구분*/
+                if(e.code=="ArrowRight"){
+                    // console.log("오른쪽 화살표가 눌렸습니다.");
+                    // Bleft+=5;
+                    // box.setAttribute("style","left:"+Bleft+"px; top:"+Btop+"px;"); /*1초에 60번 움직이는 것이 제일 부드럽다*/
+                    moveRight();
+                }
+                if(e.code=="ArrowLeft"){
+                    moveLeft();
+                }
+                if(e.code=="ArrowDown"){
+                    moveDown();
+                }
+                if(e.code=="ArrowUp"){
+                    moveUp();
+                }
+                set();
+                
+                
+            });
+            function moveRight(){
+                    Bleft+=5;
+                }
+            function moveLeft(){
+                Bleft-=5;
+            }
+            function moveDown(){
+                Btop+=5;
+            }
+            function moveUp(){
+                Btop-=5;
+            }
+            function set(){
+                check();
+                box.setAttribute("style","left:"+Bleft+"px; top:"+Btop+"px;"); 
+            }
+            function check(){
+                if(Bleft>500-50){
+                    Bleft=450;
+                }
+                if(Bleft<0){
+                    Bleft=0;
+                }
+                if(Btop>500-50){
+                    Btop=450;
+                }
+                if(Btop<0){
+                    Btop=0;
+                }
+            }
+
+
+        </script>
+    </body>
+</html>

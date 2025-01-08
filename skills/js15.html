@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>드래그 앤 드롭 메뉴처리</title>
+        <meta charset="utf-8">
+        <style>
+            #container{
+                width:608px;
+            }
+            .list{
+                border:1px solid black;
+                width:150px;
+                height:400px;
+                float:left;
+            }
+            .list h1{
+                text-align: center;
+            }
+            #constainer::after{
+                clear: both;
+                content: "";
+                display: block;
+            }
+            .list .item{
+                background-color: lightgray;
+                padding:20px;
+                margin:20px;
+                border-radius: 8px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+       <div id="container">
+            <div class="list">
+                <h1>과목선택</h1>
+                <div class="item" draggable="true">JavaScript</div>
+                <div class="item" draggable="true">HTML</div>
+                <div class="item" draggable="true">CSS</div>
+                <div class="item" draggable="true">DOM</div>
+            </div>
+            <div class="list">
+                <h1>수강신청</h1>
+            </div>
+            <div class="list">
+                <h1>관심분야</h1>
+            </div>
+            <div class="list">
+                <h1>학습완료</h1>
+            </div>
+       </div>
+
+
+        <script>
+            var items=document.getElementsByClassName("item");  //드래그로 이동가능한 메뉴들의 배열
+            var lists=document.getElementsByClassName("list");  //드래그로 담을 상자들의 배열
+            console.log(items);
+            console.log(lists);
+            var dragItem=null;  //현재 드래그가 수행되고 있는 메뉴를 특정하기 위한 변수
+            var dragList=null;  //현재 드래그를 완료한 메뉴를 담기 위한 상자
+
+            
+            function dragStart(){ //드래그가 시작되었을 때 수행할 함수
+                // console.log("드래그가 시작되었습니다.");
+                dragItem=this;
+                console.log(dragItem);
+            }
+            function dragEnd(){ //드래그가 종료되었을 떄 수행할 함수
+                console.log("드래그가 종료되었습니다.");
+            }
+            for(var i=0; i<items.length; i++){
+                items[i].addEventListener("dragstart", dragStart);
+                items[i].addEventListener("dragend", dragEnd);
+            }
+            // items[0].addEventListener("dragstart", dragStart);
+            // items[1].addEventListener("dragstart", dragStart);
+            // items[2].addEventListener("dragstart", dragStart);
+            // items[3].addEventListener("dragstart", dragStart);
+
+            //dragover : 뭔가가 드래그 된 채로 이 요소 위로 올라와 있는 동안 반복수행
+            //           **dragover가 preventDefault()를 수행하지 않으면 drop이 동작하지 않는다.
+            //dragenter : 뭔가가 드래그 된 채로 이 요소 위로 올라오면 1회만 실행
+            //dragleave : 뭔가가 드래그 된 채로 이 요소 위로 올라왔다가 나갈때 1회만 실행
+            //drop : 뭔가가 드래그 된 채로 이 요소 위에 드롭시킨 순간 실행
+            //       dragover의 기능을 정지시키지 않으면 드롭이 동작하지 않는다.
+            function dragOver(e){
+                e.preventDefault(); //동작을 방지하는 코드
+            }
+            function dragEnter(){
+                // console.log("드래그 엔터 발생");
+                dragList=this;  //지금 누구 위로 들어왔는지를 체크
+            } 
+            function dragLeaver(){
+                //console.log("드래그 리브 발생");
+            }
+            function dragDrop(){
+                //console.log("드롭 발생");
+                console.log(dragList); //체크된 내용을 출력
+                this.append(dragItem); //해당 드래그된 아이템을 드롭시킨 영역의 내부로 이동
+            }
+            for(var a=0; a<lists.length; a++){
+                lists[a].addEventListener("dragover", dragOver);
+                lists[a].addEventListener("dragenter", dragEnter);
+                lists[a].addEventListener("dragleave", dragLeaver);
+                lists[a].addEventListener("drop", dragDrop);
+            }
+           
+            
+           
+        </script>
+    </body>
+</html>

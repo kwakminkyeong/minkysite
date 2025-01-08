@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>버튼 누르고 추가</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <button>추가</button>
+        <ul>
+            <li>봄</li>
+            <li>여름</li>
+            <li>가을</li>
+            <li>겨울</li>
+        </ul>
+
+        <script>
+            let btn=document.querySelector("button");
+            btn.addEventListener("click", yourDo);
+            const array=["봄", "여름", "가을", "겨울"];
+            let parent=document.querySelector("ul");
+            let i=0;
+
+            function yourDo(){
+                let list=document.createElement("li");
+                let arr=document.createTextNode(array[i]);
+
+                list.appendChild(arr);
+                parent.appendChild(list);
+
+                i++;
+                if(i%4==0){
+                    i=0;
+                }
+
+
+            }
+
+
+        </script>
+
+
+
+
+    </body>
+</html>

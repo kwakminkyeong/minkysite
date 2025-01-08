@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>자바스크립트 DOM</title>
+        <meta charset="utf-8">
+        <style>
+            h1{
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="color:red" onclick="test()">안녕하세요</h1>
+        <h1>반갑습니다</h1>
+        <h1>날씨가 춥네요</h1>
+
+        <h2>첫번째</h2>
+        <h2>두번째</h2>
+        <h2>세번째</h2>
+        <h2>네번째</h2>
+        <h2>다섯번째</h2>
+
+
+        <script>
+        document.getElementsByTagName("h1")[2].innerHTML="빙판길 조심하세요";
+        let sty=document.getElementsByTagName("h1")[0].getAttribute("style");
+        console.log(sty);
+        document.getElementsByTagName("h1")[1].setAttribute("style","color:blue");
+
+        //노출이 된다
+        function test(){
+            alert("이런 메시지를 표시합니다."); //화면안의 모든 기능이 정지한다. 다른 것들을 동작하지 못하게 하는 것을 모달(점유선점).
+                                            //레이어팝업_현재 창에서 모달 레이어 팝업
+        }
+        
+        document.getElementsByTagName("h1")[1].setAttribute("onclick","test()");
+       
+        //노출이 안되게 이벤트 설정
+        document.getElementsByTagName("h1")[2].addEventListener("click",test);//test()가 붙으면 바로 test를 실행하게되므로 그 후 클릭해도 실행되지 않는다.
+        //이름이 없는 function
+        document.getElementsByTagName("h1")[2].addEventListener("click",function(){
+            console.log(this); //this는 function을 실행시킨 원인 getElementsByTagName("h1")[2] 을 가리킨다.
+            this.setAttribute("style","color:white; background-color:black");
+        });
+        
+        let h2=document.getElementsByTagName("h2");
+        console.log(h2[0]);
+        console.log(h2[1]);
+        console.log(h2[2]);
+        
+
+        for(let i=0; i<h2.length; i++){
+            console.log(h2[i]);
+
+            h2[i].addEventListener("mouseover",function(){
+                h2[i].innerHTML="동작확인!";
+            });
+
+        }
+
+    
+
+
+
+
+
+        </script>
+    </body>
+</html>  

@@ -1,0 +1,174 @@
+ @charset "utf-8";
+ 
+ 
+#wrap{
+    width:1000px;
+    margin:0 auto;
+    }
+.header{
+    width:1000px;
+    height:80px;
+    background-color: darkolivegreen;
+    margin: 0 auto;
+}
+
+.main2{
+    width:900px;
+    height: 300px;
+    margin: auto;
+    margin-top:50px;
+}
+.main3{
+    width:900px;
+    height: 300px;
+    margin: auto;
+    margin-top:0px;
+}
+ .contents{
+    height:700px;
+    margin-top:10px;
+}
+.logo{
+    width:300px;
+    height:80px;
+    float:left;
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size:17px;
+    text-align: center;
+    color:white;
+    line-height:33px;
+    
+    
+}
+
+.main{
+    width:550px;
+    height:80px;
+    float:left;
+    margin-left: 150px;
+    
+}
+ul{
+    list-style: none;
+    margin: 0px;
+    padding:0px;
+}
+li{
+    width:130px;
+    height:80px;
+    display: inline-block;
+    color:white;
+    text-align: center;
+    font-size:17px;
+    line-height: 80px;
+    font-weight:bold;
+}
+
+li:hover{
+    color:rgb(194, 224, 194);
+}
+
+
+.left{
+    width:450px;
+    height:300px;
+    float:left;
+    }
+.right{
+    width:450px;
+    height:250px;
+    margin-top:66px;
+    line-height:20px;
+    float:left;
+    }
+p{
+    font-size:14px;
+    }
+
+
+
+img{
+    width:fit-content;
+    height:fit-content;
+    margin-top: 15px;
+    border-radius: 20px;
+    float: left;
+    }
+
+#headling{
+    width:900px;
+    height:400px;
+    }
+#headling > div{
+    width: 450px;
+    height:360px;
+    line-height:13px;
+    margin-top: 0px;
+    float:right;
+    }
+#activity{
+    width:900px;
+    height:400px;
+    }
+#activity > div{
+    width: 450px;
+    height:360px;
+    line-height:13px;
+    margin-top: 0px;
+    float:right;
+    }
+.gonggi{
+    width:900px;
+    height:250px;
+    margin:0 auto;
+    border-left:1px solid lightgray;
+    border-right:1px solid lightgray;
+}
+.gongtitle{
+    width:150px;
+    height:50px;
+    border:1px solid black;
+    text-align:center;
+    line-height:50px;
+    border-radius:15px;
+    margin:0 auto;
+}
+.gonggilist{
+    width:800px;
+    height:150px;
+   
+    margin:0 auto;
+}
+.text{
+    width:400px;
+    height:150px;
+    float:left;
+}
+.date{
+    width:400px;
+    height:150px;
+    float:left;
+}
+.list{
+    width:390px;
+    height:30px;
+    display: block;
+    text-align: left;
+    line-height:50px;
+    font-size:14px;
+    font-weight:lighter;
+    color:black;
+    
+}
+.date01{
+    width:390px;
+    height:30px;
+    display: block;
+    text-align: right;
+    line-height:50px;
+    font-size:14px;
+    font-weight:lighter;
+    color:black;
+    
+}

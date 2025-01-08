@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>학생수</th>
+                <td><input type="number" name="student" id="student" placeholder="필수입력" onkeydown="alert('onkeydown')"></td>
+            </tr>
+            <tr>
+                <th>학과 과목</th>
+                <td><input type="number" name="subject" id="subject" placeholder="필수입력" onkeyup="alert('onkeyup')"></td>
+            </tr>
+            <tr>
+                <th>전체 교과서 양</th>
+                <td><input readonly type="number" name="total" id="total" placeholder="" onkeypress="alert('onkeypress')"></td>
+            </tr>
+        </table>
+
+        <!-- <table>
+            <tr>
+                <th>한 조의 인원수</th>
+                <td><input type="number" name="student" id="student" placeholder="필수입력" onkeydown="alert('onkeydown')"></td>
+            </tr>
+            <tr>
+                <th>몇개조인가</th>
+                <td><input type="number" name="subject" id="subject" placeholder="필수입력" onkeyup="alert('onkeyup')"></td>
+            </tr>
+            <tr>
+                <th>전체 인원</th>
+                <td><input readonly type="number" name="total" id="total" placeholder="" onkeypress="alert('onkeypress')"></td>
+            </tr>
+        </table> -->
+
+        <script>
+
+            /*
+            onkeypress //지정한 요소에서 키보드가 눌렸을 때 발생합니다.
+            onkeydown   //지정한 요소에서 키보드를 눌렀을 때 발생합니다.
+            onkeyup //지정한 요소에서 키보드를 눌렀다 땠을때 발생합니다.
+            */
+
+
+            function inputAmt(obj){
+                let p2=(document.getElementById("student").value)*obj.value;
+                document.getElementById("total").setAttribute("value", p2);
+            }
+            document.getElementById("subject").onkeyup=function(){
+                inputAmt(this);
+            }
+        </script>
+    </body>
+</html>

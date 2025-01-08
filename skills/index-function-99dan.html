@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>구구단</title>
+        <meta charset="utf-8">
+        <style>
+            div{
+                width:100px;
+                height:300px;
+                background-color: aqua;
+                float:left;
+                margin-left: 50px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+
+            function mul(i,j){
+               return i*j
+            }
+
+            function dan(i){
+                for(let j=1; j<=9; j++){
+                document.write(i+"*"+j+"="+mul(i,j)+"<br>");
+            }
+            }    
+           
+            function gugu(){
+                for(let i=2; i<=9; i++){
+                    document.write("<div>");
+                    document.write("<h1>"+i+"단</h1>");
+                    dan(i);
+                    document.write("</div>");
+            }
+            
+            }
+        
+       
+        gugu();
+      
+      
+         
+
+        </script>
+        
+    </body>
+</html>

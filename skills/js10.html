@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>쓰기연습</title>
+    </head>
+    <body>
+        <input type="text" value="기본값">
+        <input type="button" value="+" >
+        <input type="text" value="기본값">
+        <h1>결과</h1> <!--적혀있는 값을 바꾸기위해서는 innerHTML을 써준다-->
+       
+
+        <script>
+            //1.변수 두개를 만들어서 각각 35와 70을 저장하시오, 저장 이후 변수값을 console에 출력!
+            // var num1; //변수를 만든다
+            // var num2;
+            // num1=35; // 변수값을 넣어준다.
+            // num2=70;
+            // console.log("num1 변수 내부의 값 : "+num1);
+            // console.log("num2 변수 내부의 값 : "+num2);
+            // console.log("num1 변수 내부의 값 : "+num1+ ",num2 변수 내부의 값 : "+num2);
+
+            //2.두 변수의 값을 더한 뒤 새로운 변수를 만들어 저장하시요, 저장 이후 결과를 console에 출력!
+            // var result=num1+num2;
+            // console.log("결과는 " + result);
+
+            //3.만들어진 두 개의 변수에 사용자가 값을 입력할 수 있도록 prompt를 실행하시오.
+            //실행 결과 입력 된 값을 console에 출력
+
+            // var A=prompt("A변수에 저장할 수를 적어주세요"); //()안내문을 적어준다. 문자로 적용된다.
+            // var B=prompt("B변수에 저장할 수를 적어주세요");
+            // var result2=parseInt(A)+parseInt(B);
+            // console.log("결과는"+result2);
+
+            //4.입력된 데이터를 숫자로 변환하여 계산이 가능하도록 처리 parseInt()
+            //parseInt를 통한 문자의 숫자변환은 연산자보다 먼저 수행되어야 효과가 있다.
+
+            //1.input type='text'를 제작하시오
+            //2.input type='button'를 제작하시오
+            //3.변수를 두개 만들어서 각각 위의 태그를 저장한 후 console로 출력!
+            var txt=document.getElementsByTagName("input")[0];
+            var btn=document.getElementsByTagName("input")[1];
+            console.log(txt);
+            console.log(btn);
+
+            //4.버튼을 눌렀을 때 "동작확인!"이라고 적히도록 function을 제작하고 버튼을 onclick지정! tag에 onclick="test()"를 넣어준다
+            function test(){ //function 뒤에는 이름이 들어가야 한다. 글자 하나하나 의도를 담아야한다.
+                console.log("동작확인!");
+            };
+            test();
+
+            //5. onclick지정이 없이 function을 연결하는 방법  속성node법
+            // btn.setAttribute("onclick","test()");
+
+            //6.addEventListener를 이용하는 방법. 보안성이 좋다. test()를 적지 않는다
+            // btn.addEventListener("click",test); //클릭될 때 테스트 실행해
+
+            //7. addEventListener를 이용하되 익명함수를 사용하는 방법.실행시점이 정해져 있기때문에 이름이 필요없다.
+            // btn.addEventListener("click", function(){  //많이 쓰이는 방법이다. 제이쿼리에서도 많이 사용된다. btn이 클릭되면 실행. {}매개변수
+            //     alert("익명함수 실행 확인!");
+            // }); 
+
+            //1. 버튼이 클릭되었을 때 input type='text'에 적힌 내용을 출력하도록 함수 내부를 수정하시오.
+            btn.addEventListener("click", function(){
+                // if(isNaN(txt.value)){
+                //     console.log("첫번째 input에 문자가 적혀있습니다.");
+                // }
+                // if(isNaN(txt2.value)){
+                //     console.log("두번째 input에 문자가 적혀있습니다.");
+                // }
+
+                // if(!isNaN(txt.value)){
+                //     console.log("첫번째 input에 숫자가 적혀있습니다.");
+                // }
+                // if(!isNaN(txt2.value)){
+                //     console.log("두번째 input에 숫자가 적혀있습니다.");
+                // }
+                // if(txt.value==""){
+                    if(txt.value.length==0){
+                    alert("첫번째 칸이 빈칸입니다.");
+                    return false;
+
+                }   //빈칸인지를 확인하는 부분 
+                if(!isNaN(txt.value) && !isNaN(txt2.value)){
+                    result=parseInt(txt.value)+parseInt(txt2.value); //parseInt를 +하기 전에 넣어준다.
+                    h.innerHTML=result;
+                }
+                else if(isNaN(txt.value)){
+                    txt.value="수정요망!";
+                    h.innerHTML="왼쪽에 문자가 적힘";
+                }//숫자가 적혔는지 문자가 적혔는지를 판별하는 부분
+            });
+
+            //2. input type='text'를 하나 더 추가 한 뒤 버튼이 눌렸을 때 둘 다 출력하도록 함수 내부 수정
+            var txt2=document.getElementsByTagName("input")[2];
+
+            //3.input type='text'에 숫자가 아닌 문자가 적혀있는 경우 판별해 내시오 is Not number
+            console.log(isNaN("가나다라"));
+            //4.결과를 표시할 h1 태그를 제작한 뒤 계산 결과를 출력하시오
+            var h=document.getElementsByTagName("h1")[0];
+            
+
+
+
+        </script>
+    </body>
+</html>

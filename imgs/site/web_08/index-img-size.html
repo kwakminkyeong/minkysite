@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <title></title>
+          <meta charset="utf-8">
+          <style>
+               *{
+                    margin: 0px;
+                    padding: 0px;
+               }
+               .imgs{
+                    width:980px;
+                    margin: 0 auto;
+               }
+
+               .imgs>div{
+                    width: 300px;
+                    height: 209px;
+                    float: left;
+                    margin: 0 auto;
+                    border: 3px solid gray;
+                    margin-left: 10px;
+                    margin-top: 10px;
+                    border-radius: 30px;
+                    overflow: hidden;
+                    text-align: center;
+                  
+               }
+               .imgs>div>img:hover{
+                    scale:130%;
+               }
+             .imgs>div>img{
+               width: 300px;
+               height: 209px;
+
+               
+             }
+             
+             h1{
+               height: 100px;
+               margin: 0 auto;
+               line-height: 100px;
+               text-align: center;
+             }
+             #bg{
+               width:100%;
+               height: 100%;
+               background-color: rgba(0,0,0,0.8);
+               position: absolute;
+               /* display: none; */
+               /* top:600px; */
+               visibility: hidden;
+              
+               
+             }
+             #bg>img{
+               transform: translate(-50%, 15%);
+               position: absolute;
+               left: 50%;
+               border:10px solid white;
+               width: 1000px;
+               /* border-radius: 10px; */
+               /* visibility: hidden; */
+             }
+          </style>
+
+     </head>
+     <body>
+          <div id="bg">
+               <img  alt="큰그림">
+               <!-- <img class=bgimg src="imgs/tree-2.jpg" alt="나무2">
+               <img class=bgimg src="imgs/tree-3.jpg" alt="나무3">
+               <img class=bgimg src="imgs/tree-4.jpg" alt="나무4">
+               <img class=bgimg src="imgs/tree-5.jpg" alt="나무5">
+               <img class=bgimg src="imgs/tree-6.jpg" alt="나무6"> -->
+          </div>
+
+          <div id="wrap">
+               <h1>보고싶은 이미지를 클릭하세요.</h1> 
+               <div class="imgs">
+                    <div><img class=bgimg src="imgs/tree-1.jpg" alt="나무"></div>
+                    <div><img class=bgimg src="imgs/tree-2.jpg" alt="나무"></div>
+                    <div><img class=bgimg src="imgs/tree-3.jpg" alt="나무"></div>
+
+               </div>
+               <div class="imgs">
+                    <div><img class=bgimg src="imgs/tree-4.jpg" alt="나무"></div>
+                    <div><img class=bgimg src="imgs/tree-5.jpg" alt="나무"></div>
+                    <div><img class=bgimg src="imgs/tree-6.jpg" alt="나무"></div>
+
+               </div>
+
+          </div>
+          
+
+          <script>
+               let bgimg=document.querySelectorAll(".bgimg");
+               for(let i=0; i<bgimg.length; i++){
+                    bgimg[i].addEventListener("click",function(){
+                         bg.style.visibility="visible";
+                         document.getElementsByTagName("img")[0].src="imgs/tree-"+(i+1)+".jpg";
+                    });
+               }
+             
+               document.getElementsByTagName("img")[0].addEventListener("click", ()=>{
+                    document.getElementById("bg").style.visibility="hidden";
+               });
+               
+               
+
+          </script>
+          
+     </body>
+</html>

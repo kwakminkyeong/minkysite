@@ -1,0 +1,261 @@
+*{
+    color:#333333;
+    margin:0;
+    padding:0;
+}
+#wrap{
+    width:1200px;
+    height:700px;
+    margin:0 auto;
+}
+.A{
+    height:100px;
+}
+.B{
+    width:1200px;
+    height:300px;
+    overflow:hidden;
+}
+.C{
+    height:200px;
+}
+.D{
+    height:100px;
+    background-color: #77bd2c;
+}
+.logo{
+    width:200px;
+    height:100px;
+    background-color: rgba(255,255,255,0.5);
+    line-height: 130px;
+    float:left;
+}
+.menus{
+    width:800px;
+    height:50px;
+    background-color:rgba(255,255,255,0.5);
+    float:right;
+    margin:25px;
+}
+a{
+    text-decoration:none;
+}
+ul{
+    list-style:none;
+    margin:0;
+    padding:0px;
+}
+li{
+    width:200px;
+    height:50px;
+    background-color: white;
+    float:left;
+    font-weight:bold;
+    font-size:18px;
+    text-align:center;
+    line-height:50px;
+}
+li:hover{
+    background-color: #77bd2c;
+    
+}
+.sub li{
+    font-size:16px;
+    font-weight:lighter;
+    
+}
+.sub{
+    display: none;
+    position:relative;
+    z-index: 3;
+}
+.pan{
+    width:1200px;
+    height:900px;
+    position:relative;
+    top:0px;
+    left:0px;
+
+}
+.slide1{
+    width:1200px;
+    height:300px;
+    background-color: red;
+}
+.slide2{
+    width:1200px;
+    height:300px;
+    background-color: orange;
+}
+.slide3{
+    width:1200px;
+    height:300px;
+    background-color:green;
+}
+.C12{
+    width:400px;
+    height:200px;
+    float:left;
+}
+.C3{
+    width:400px;
+    height:200px;
+    float:left;
+}
+.C4{
+    width:400px;
+    height:200px;
+    float:left;
+}
+.btn{
+    width:400px;
+    height:40px;
+    
+}
+.gongbtn{
+    width:100px;
+    height:40px;
+    background-color: white;
+    line-height:40px;
+    text-align:center;
+    float:left;
+}
+gonggall{
+    width:400px;
+    height:160px;
+}
+.gonglist{
+    width:400px;
+    height:160px;
+    background-color: white;
+    position:relative;
+    z-index: 23;
+}
+.gonglist div{
+    height:40px;
+    line-height:40px;
+    font-size:14px;
+    padding-left:10px;
+}
+.gallery{
+    width:400px;
+    height:200px;
+    position:relative;
+    top:-200px;
+}
+.gallbtn{
+    width:100px;
+    height:40px;
+    background-color: rgb(247, 247, 247);
+    line-height:40px;
+    text-align:center;
+    float:left;
+}
+.gallimg{
+    width:400px;
+    height:160px;
+    background-color: rgb(247, 247, 247);
+    position:relative;
+    top:-160px;
+    z-index: 22;
+}
+
+.gallimg div{
+    width:100px;
+    height:100px;
+    background-color:black;
+    float:left;
+    margin-left:25px;
+    margin-top:30px;
+}
+.C4 div{
+    width:100px;
+    height:200px;
+    float:left;
+    margin-left:25px;
+}
+C4 img:hover{
+    opacity:0.3;
+}
+.logo2{
+    width:200px;
+    height:100px;
+    float:left;
+    font-size:12px;
+    line-height: 130px;;
+
+}
+.copy{
+    width:800px;
+    height:100px;
+    float:left;
+}
+.sns{
+    width:200px;
+    height:100px;
+    float:left;
+}
+
+.add{
+    width:800px;
+    height:50px;
+    text-align:center;
+    line-height: 80px;
+}
+.copyright{
+    width:800px;
+    height:50px;
+    text-align:center;
+    line-height: 50px;
+    font-size:12px;
+}
+.sns div{
+    width:calc(100% / 3);
+    float:left;
+    line-height:100px;
+    text-align: center;
+    padding-top:10px;
+}
+#modal{
+    width:100%;
+    height:5000px;
+    background-color: rgba(0,0,0,0.7);
+    position:relative;
+    top:-900px;
+    z-index: 99;
+    display:none;
+}
+.popup{
+    width:450px;
+    height:350px;
+    background-color:white;
+    position: absolute;
+    top:350px;
+    left:35%;
+}
+.title{
+    width:450px;
+    height:100px;
+    text-align:center;
+    font-weight:bold;
+    font-size:20px;
+    line-height:100px;
+}
+.nayong{
+    width:450px;
+    height:200px;
+    text-align:center;
+    line-height:40px;
+}
+.close{
+    width:450px;
+    height:50px;
+    margin-left:375px;
+}
+.close p{
+    width:50px;
+    height:20px;
+    border:1px solid black;
+    line-height:20px;
+
+}

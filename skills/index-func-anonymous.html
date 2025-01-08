@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>익명함수</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            //익명함수
+            //함수 (이름이 없는)
+            //함수 자체가 식임.
+            //함수가 식이므로 함수를 변수에 할당할 수 있음.
+            //함수 정의
+         (function (){
+            document.write("iot");
+         })
+         //익명함수를 변수 func에 할당. 변수이지만 func()를 통해 익명함수를 실행시킴
+         let func = function(){
+            document.write("북부");
+         }
+         func();
+
+         //함수 즉시 실행방법
+         (function (){
+            document.write("iot");
+         })();
+
+         document.write(
+         (function(r){
+            return 3.14*r*r;
+         })(5)
+         )
+         ;   
+
+         let value=(function(r){
+            return 3.14*r*r;
+         });
+         document.write("<br>"+value(6));
+
+
+         //안녕하세요 출력
+
+         (function (){
+            document.write(" <br>안녕하세요~");
+         })();
+
+         let hello=function(){
+            document.write("<br>안녕하세요~ 반갑습니다.<br>");
+         }
+         hello();
+
+         (function (h){
+            document.write(h);
+         })("Hi~반갑습니다.<br>");
+
+         let young=function(y){
+            return y;
+         }
+         document.write(young("이곳에 오신것을 환영합니다 <br>"));
+
+       
+
+        (function(year){
+        document.write(2023-year+"세<br>");
+         })(1972);
+        
+        
+
+         
+         //2개의 숫자값을 매개변수로 받아
+         //두수의 곱을 구해 리턴하자
+        
+         let hap=function(a, b){
+            return a*b;
+         }
+         document.write(hap(5,6));
+
+         (function(year){
+        document.write(2023-year+"세<br>");
+         })();
+        </script>
+    </body>
+</html>

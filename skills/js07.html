@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+    <head>
+        <title>jQuery 읽기</title>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <div id="wrap">
+            <div></div>
+            <div></div>
+            <div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <script>
+            /*var w=document.getElementById("wrap");
+            w.style.width="900px"; //"900px" px을 모르기때문에 기계적으로 왼쪽에 넣어주라고 쌍따옴표를 사용한다.
+            w.style.height="600px";
+            w.style.backgroundColor="red"; //backgroundColor 변수이름이므로 특수문자를 사용하지 않는다. 지정된 문자이다.
+            w.style.margin="0 auto";*/
+
+            var w=$("#wrap");
+                                // console.log(w); //s.fn.init [div#wrap] 자동으로 배열로 넣어 놓는다. init=초기화 제이쿼리의 문법을 이용해서 사용해준다.
+           /* w.css("width","900px"); //css 함수안에는 w.style.width="900px";가 있다. https://code.jquery.com/jquery-3.6.0.min.js 안에 있다. 
+            w.css("height","600px");
+            w.css("background-color", "red"); //"background-color" 변수가 아니므로 - 를 사용할 수 있다.*/
+            w.css({"width":"900px", "height":"600px", "background-color":"red", "margin":"0 auto"}); //{} 한묶음이라는 표시 한쌍을 표시할 때는 클론 :
+
+            var header=$("#wrap > div:first-child");
+            header.css({"width":"900px", "height":"100px", "background-color":"orange"});
+
+            var slide=$("#wrap > div:nth-child(2)");
+            slide.css({"width":"900px","height":"300px","background-color":"yellow"});
+
+            var content=$("#wrap > div:last-child");
+            content.css({"width":"900px","height":"200px","background-color":"green"});
+
+            $("#wrap > div:last-child > div:first-child").css({
+                "width":"300px",
+                "height":"200px", 
+                "background-color":"blue",
+            });
+
+            content.find("div:nth-child(2)").css({
+                "width":"300px",
+                "height":"200px",
+                "background-color":"indigo",
+            });
+
+            content.find("div:last-child").css({
+                "width":"300px",
+                "height":"200px",
+                "background-color":"purple",
+            });
+            
+            content.find("div").css("float","left"); //한쌍이므로 {}를 빼고 쌍이라는 표시는 필요없으므로 쉼표를 적는다.
+
+            /*없는 태그를 만들어서 포함시키는 방법. 없는 요소를 만들 수 있다*/
+            var buttons=document.createElement("div"); //<div></div>가 만들어 졌다. 어느 위치에 들어가는지 못하고 허공에 떠있는 상태
+            buttons.setAttribute("class","btns"); //클래스 네임이 btns  <div class="btns"></div>
+            content.find("div:first-child").append(buttons); //div:first-child" append 안에 넣어달라
+            $(".btns").css({"width":"300px", "height":"50px", "background-color":"gray"});
+
+            var data=document.createElement("div");
+            data.setAttribute("class","data");
+            $(".btns").after(data); //.btns after 다음에 넣어달라
+            $(".data").css({"width":"300px", "height":"150px", "background-color":"red"});
+
+            var gongji=$("<div class='gong'>공지사항</div>");
+            gongji.css({"width":"300px", "height":"150px", "background-color":"black", "color":"white", "font-size":"40px", "text-align":"center", "line-height":"150px"});
+            $(".data").append(gongji);
+
+            var gall=$("<div class='gall'>갤러리</div>");
+            gall.css({"width":"300px", "height":"150px", "background-color":"pink", "color":"white","font-size":"40px", "text-align":"center", "line-height":"150px"});
+            $(".data").append(gall);    
+
+            $(".data").css({"position":"relative"});
+            $(".data > div").css({"position":"absolute", "top":"0", "left":"0"});
+
+            var btn1=$("<div class='btn1'>버튼1</div>");
+            btn1.css({"width":"150px","height":"50px", "background-color":"blue", "color":"white", "font-size":"30px", "text-align":"center", "line-height":"50px"});
+            $(".btns").append(btn1);
+
+            var btn2=$("<div class='btn2'>버튼2</div>");
+            btn2.css({"width":"150px","height":"50px", "background-color":"green", "color":"white", "font-size":"30px", "text-align":"center", "line-height":"50px"});
+            $(".btns").append(btn2);
+
+            $(".btns > div").css({"float":"left"});
+
+            $(".btn1").click(function(){
+                gongji.css("z-index","1");
+                gall.css("z-index","0");
+            });
+            $(".btn2").click(function(){
+                gongji.css("z-index","0");
+                gall.css("z-index","1");
+            });
+
+
+        </script>
+    </body>
+</html>

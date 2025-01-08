@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <title>li로 요소추가</title>
+          <meta charset="utf-8">
+     </head>
+     <body>
+          <script>
+               let parent=document.querySelector("body");
+               let div=document.createElement("div");
+               let id=document.createAttribute("id");
+               id.value="wrap";
+               div.setAttributeNode(id);
+               parent.appendChild(div);
+               
+///////////////////////////////////////////////////////
+               let h=document.createElement("h1");
+               let txt=document.createTextNode("Web Programming");
+
+               
+               div.appendChild(h);
+               h.appendChild(txt);
+
+//////////////////////////////////////////////////////
+               let p=document.createElement("p");
+               let txtP1=document.createTextNode("공부할 주제를 기록해 보세요");
+              
+               p.appendChild(txtP1);
+               div.appendChild(p);
+    /////////////////////////////////////////////////           
+
+              
+
+               p=document.createElement("p");
+               let txtP2=document.createTextNode("공부가 끝난 것은 클릭해서 삭제할 수 있습니다");
+
+               div.appendChild(p);
+               p.appendChild(txtP2);
+
+               parent.appendChild(div);
+
+//////////////////////////////////////////////////////////////////
+               let inp=document.createElement("input");
+
+               let type=document.createAttribute("type");
+               type.value="text";
+               inp.setAttributeNode(type);
+
+               let name=document.createAttribute("name");
+               name.value="input";
+               inp.setAttributeNode(name);
+
+               let inId=document.createAttribute("id");
+               inId.value="input";
+               inp.setAttributeNode(inId);
+
+               let auto=document.createAttribute("autofocus");
+               auto.value="true";
+               inp.setAttributeNode(auto);
+               inp.style.height="30px";
+               inp.style.width="200px";
+
+               div.appendChild(inp);
+
+              
+               
+              
+              
+               
+              
+
+///////////////////////////////////////////////////////////////////////////
+
+               let btn=document.createElement("button");
+               let btntxt=document.createTextNode("추가");
+               btn.style.width="50px";
+               btn.style.height="35px";
+               btn.style.marginLeft="10px";
+               
+
+              
+               btn.appendChild(btntxt);
+               div.appendChild(btn);
+              
+
+
+               let hr=document.createElement("hr");
+               div.appendChild(hr);
+
+////////////////////////////////////////////////////////////////////////////////
+
+               let ul=document.createElement("ul");
+               div.appendChild(ul);
+               btn.addEventListener("click",add);
+               inp.addEventListener("keyup",doDo);
+
+               
+               function doDo(event){
+                    console.log('${event.key}');
+                    if(event.key=="Enter"){
+                         add();
+                    }
+               }
+              
+              
+               function add(){
+                    let li=document.createElement("li");
+                    let intxt=document.createTextNode(inp.value);
+                    let spn=document.createElement("span");
+                    let cls=document.createAttribute("class");
+                    
+                    cls.value="check";
+                    spn.setAttributeNode(cls);
+                    li.appendChild(spn);
+
+
+
+                    ul.style.listStyleType="square";
+                    
+                    spn.appendChild(intxt);
+                    
+                    ul.insertBefore(li,ul.children[0]);
+                    inp.value=""; 
+                    
+                    //li를 더블클릭하면 해당항목 지워주기
+                    li.addEventListener("dblclick", remove);
+
+                    spn.addEventListener("click",color);  
+                    
+                }
+                function remove(){
+                    //document.querySelector("ul").removeChild(this);
+                    this.parentNode.removeChild(this);
+
+                }
+
+                function color(){
+                    //document.querySelector("spn").color="red";
+
+                    this.parentNode.style.color="red";
+                    this.parentNode.style.textDecoration="line-through";
+                }
+
+
+
+              
+              
+                
+               
+                
+
+                
+
+
+
+               // let input=document.querySelector("input");
+               // input.addEventListener("keyup", mykeyUp);
+               // function mykeyUp(event){
+               //      consile.log('${event.key}');
+               //      if(event.key=="Enter"){
+               //           add();
+               //      }
+
+               // }
+               // function add(){
+               //      //li를 통해 항목 하나 추가되게 해줌
+               //      let newLi=document.createElement("li");
+               //      let nextNode=document.createTextNode(input.value); //li의 항목에 넣어야할 값
+               //      newLi.appendChild(textNode);
+                    
+               //      let parent=document.querySelector("ul");
+               //      //parent.appendChild(newLi);
+               //      parent.insertBefore(newLi, parent.children[0]);
+               //      input.value="";
+
+               
+               // }
+               
+          </script>
+     </body>
+</html>

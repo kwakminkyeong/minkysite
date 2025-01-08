@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>로또만들기</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        /* "div#wrap>div:nth-child("+(i+1)+")" */
+           #wrap{
+            width:1000px;
+            height:120px;
+            margin: 0 auto;
+           }
+           .circle{
+                width:100px;
+                height:100px;
+                background-color: lightskyblue;
+                border-radius:50%;
+                float: left;
+                font-weight: 900;
+                text-align:center;
+                line-height:100px;
+            }
+            div{
+                float: left;
+                line-height:100px;
+                width:50px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div>+</div>
+            <div class="circle"></div>
+        </div>
+
+
+
+        <script>
+           
+            
+            // document.write("<br>"+(parseInt(Math.random()*45)+1)+"<br>");
+            // document.write(parseInt(Math.random()*45)+1+"<br>");
+            // document.write(parseInt(Math.random()*45)+1+"<br>");
+            // document.write(parseInt(Math.random()*45)+1+"<br>");
+            // document.write(parseInt(Math.random()*45)+1+"<br>");
+            // document.write(parseInt(Math.random()*45)+1);
+          
+            let set=new Set();
+            // set.add(10);
+            // set.add(12);
+            // set.add(10);
+            // set.add(12);
+            // set.add(5);
+            //document.write("<br>"+set); //set 중복값을 걸러준다. 중복을 허용하지 않으며, 순서를 저장하지 않는다.
+
+            
+            
+            while(set.size <8){
+               
+                //document.write("<br>"+parseInt(Math.random()*45)+1+"<br>"); 이렇게는 아님
+                let num=parseInt(Math.random()*45)+1;
+                set.add(num);
+                
+             }
+
+             //set변수에 6개의 랜덤한 값이 담긴 상태.
+             let arr=Array.from(set); //set을 배열로 변환해주는 함수 호출.
+             
+            //  document.write(arr[0]);
+            //  document.write(arr[1]);
+            //  document.write(arr[2]);
+            //  document.write(arr[3]);
+            //  document.write(arr[4]);
+            //  document.write(arr[5]);
+            //document.write(arr[6]);
+
+            let col=["pink","lightcoral","coral","lightgreen","green","darkcyan","yellow"];
+
+            for(let i=0; i<8; i++){
+                if(i==6){
+                    continue;
+                }
+                let nth_div=document.querySelector("div.circle:nth-child("+(i+1)+")");//.style.backgroundColor=col[i];
+                nth_div.style.backgroundColor=col[i];
+                nth_div.innerHTML=arr[i]; 
+                // nth_div=document.querySelector("div#wrap>div:last-child");//.style.backgroundColor=col[i];
+                // nth_div.innerHTML="<h1>"+arr[i]+"</h1>"; 
+                //nth_div.style.backgroundColor=col[i];
+
+            }
+        
+           
+
+            
+
+        </script>
+    </body>
+</html>

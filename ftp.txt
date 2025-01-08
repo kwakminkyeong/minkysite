@@ -1,0 +1,11 @@
+FTP/SSH 주소
+lirac.mycafe24.com
+
+FTP/SSH 아이디
+lirac
+
+FTP/SSH 포트
+FTP : 21     포트안내
+SSH : 22
+
+범비년도

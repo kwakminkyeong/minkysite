@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>자동이동처리</title>
+        <meta charset="utf-8">
+        <style>
+            #wrap{
+                width: 500px;
+                height:500px;
+                border: 5px solid black;
+                margin: 0 auto;
+            }
+            #box{
+                width:50px;
+                height:50px;
+                background-color: green;
+                position: relative;
+                top:0px;
+                left:0px;
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="box">
+
+            </div>
+        </div>
+
+        <script>
+            var box=document.getElementById("box"); //움직일 공을 저장한 변수
+            // console.log(box);
+           
+            var Bleft=0;                  //공의 가로방향 위치정보를 저장할 변수
+            console.log(Bleft);
+            var Btop=0;                   //공의 세로방향 위치정보를 저장할 변수
+            var Vleft=3;                  //공의 가로방향 이동속도를 저장할 변수, 3과 -3을 반복해서 변화할 변수
+            var Vtop=1;                   //공의 세로방향 이동속도를 저장할 변수
+
+            //setInterval(함수, 시간);  :특정 시간(n/1000초)마다 자동으로 함수를 수행해주는 명령어
+            //인터벌을 정지시키기 위해서는 해당 인터벌에의 고유번호를 알아야 한다.
+            var itv=setInterval(function(){
+                // console.log(Bleft);
+                if(Bleft>=450){
+                    Vleft*=-1;
+                }
+                if(Bleft<0){
+                    Vleft*=-1;
+                }
+                if(Btop>=450){
+                    Vtop*=-1;
+                }
+                if(Btop<0){
+                    Vtop*=-1;
+                }
+                Btop+=Vtop;
+                Bleft+=Vleft;
+                box.setAttribute("style","left:"+Bleft+"px; top:"+Btop+"px;");
+            },20);
+                // console.log("인터벌 고유번호"+itv);
+            var stop=false; //클릭시 이동시킬껀지, 정지시킬껀지 확인하는 변수, false가 이동상태, true가 정지상태
+            window.addEventListener("click",function(){
+                if(!stop){
+                    console.log("정지상태입니다.");
+                    stop=true;
+                    clearInterval(itv);
+                    box.setAttribute("style","left:"+Bleft+"px; top:"+Btop+"px; background-color:red;");
+                }else{
+                    console.log("이동상태입니다.");
+                    stop=false;
+                    //다시 인터벌을 설정하는 코드
+                    itv=setInterval(function(){
+                        // console.log(Bleft);
+                        if(Bleft>=450){
+                            Vleft*=-1;
+                        }
+                        if(Bleft<0){
+                            Vleft*=-1;
+                        }
+                        if(Btop>=450){
+                            Vtop*=-1;
+                        }
+                        if(Btop<0){
+                            Vtop*=-1;
+                        }
+                        Btop+=Vtop;
+                        Bleft+=Vleft;
+                        box.setAttribute("style","left:"+Bleft+"px; top:"+Btop+"px;");
+                    },20);
+                        
+                }
+                
+            });
+        
+        </script>
+    
+    </body>
+</html>

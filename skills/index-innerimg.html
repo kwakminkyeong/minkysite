@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>innerimg()</title>
+        <meta charset="urf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #bluecup{
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="redcup"><img src="imgs/cup-1.png" alt="cup"></div>
+        <div id="bluecup"><img src="imgs/cup-2.png" alt="cup"></div>
+
+
+        <script>
+            // let cup2=document.querySelector("#bluecup");
+            let cup=document.querySelector("#redcup");
+
+            // cup.onclick=function(){
+            //     cup2.style.display="block";
+            //     this.style.display="none";
+            // };
+
+            // cup2.onclick=function(){
+            //     cup.style.display="block";
+            //     this.style.display="none";
+            // }
+
+
+            // document.querySelector("img").onclick=function(){
+            //     alert("이벤트유형:" +event.type+"이벤트 발생위치");
+            //     this.setAttribute("src","imgs/cup-2.png");
+            // };
+
+        //     let imgElement=document.getElementsByTagName("img");
+            
+        //     imgElement[0].onclick=changeCup;
+
+        //    function changeCup(){
+
+            
+        //     imgElement[0].setAttribute("src","imgs/cup-2.png");
+        //     alert("이벤트유형:" +event.type+"이벤트 발생위치");
+        //    };
+                
+
+
+
+
+            // let img2Element=document.querySelector("img");
+            // img2Element.onclick=changeCup;
+            // function changeCup(){
+            //     let pageY=event.pageY;
+            //     if(pageY<95){//95보다 작으면
+            //         this.src="imgs/cup-2.png";
+            //     }
+            //     else{
+            //         alert("김 모락 모락을 클릭하세요!");
+            //     }
+            // }
+
+
+
+            let img3Element=document.querySelector("img");
+            img3Element.onclick=changeCup;
+            function changeCup(){
+                let pageY=event.pageY;
+                if(img3Element.getAttribute("src")=="imgs/cup-1.png"){ //속성노드의 값을 가져옴
+                    this.src="imgs/cup-2.png";
+                }
+                else{
+                    img3Element.getAttribute("src","imgs/cup-1.png"); //속성노드의 값을 바꿈
+                }
+            }
+        </script>
+    </body>
+</html>

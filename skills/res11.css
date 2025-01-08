@@ -1,0 +1,242 @@
+
+#wrap{
+    width: 1240px;
+    height: 500px;
+    background-color: red;
+    margin: 0 auto;
+}
+.header{
+    width:100%;
+    height:200px;
+    /* background-color: orange; */
+}
+.tabmenu{
+  
+    border-bottom: 1px solid rgb(85, 107, 168);
+}
+.tabmenu::after{
+    content: "";
+    display: block;
+    clear:both;
+}
+.left{
+    width:600px;
+   
+   
+    float: left;
+}
+.right{
+    width:380px;
+    float: right;
+}
+.left .tab{
+    background-color: rgb(85, 107, 168);
+    color:white;
+    float: left;
+    padding: 5px;
+    border-right:1px solid white;
+    font-size:14px;
+    font-weight: 600;
+}
+.right > div{
+    padding: 6px;
+    float: left;
+    font-size:14px;
+    font-weight: 600;
+
+}
+.mark{
+    background-color: rgb(85, 107, 168);
+    padding:0px 5px;
+    color:white;
+    border-radius: 50%;
+}
+.right >div:last-child{
+    background-color: lightgray;
+    border-right:1px solid black ;
+    border-left:1px solid black;
+    font-weight: 400;
+
+}
+.tab:hover{
+    text-decoration: underline;
+}
+@media screen and (max-width:1239px){
+    #wrap{
+        width:100%;
+    }
+}
+@media screen and (max-width:985px){
+    .left{
+        display: none;
+    }
+}
+
+/*여기서부터는 센터처리합니다.*/
+.center{
+   
+    background-color: yellow;
+   
+}
+.center::after{
+    content: "";
+    display: block;
+    clear:both;
+}
+.link{
+    width:250px;
+    height:100px;
+    background-color: white;
+    line-height: 100px;
+    float: left;
+}
+.logo{
+    width:720px;
+    height:100px;
+    background-color: purple;
+    font-size:40px;
+    font-weight:600;
+    line-height: 100px;
+    text-align: center;
+    float: left;
+}
+.form{
+    width:270px;
+    height:100px;
+    background-color: green;
+    float: right;
+}
+.menu{
+    height: 50px;
+    background-color: blue;
+}
+.form input{
+    width: 200px;
+    height:30px;
+    border: 5px solid rgb(22, 43, 102);
+    margin:20px 20px 5px;
+
+}
+/*인기검색어 구현*/
+.hot{
+    width:200px;
+    background-color: white;
+    margin: 0px auto;
+    height: 25px;
+    overflow: hidden;
+}
+.hot-list{
+    width:200px;
+    background-color: white;
+    position: relative;
+    transition: 0.5s;
+
+}
+.hot-list > div{
+    height:25px;
+    font-size: 13px;
+
+}
+.num{
+    background-color: blue;
+    color:white;
+    width:20px;
+    display: inline-block;
+    text-align: center;
+    font-weight: 600;
+    line-height: 25px;
+}
+/*히든폼 처리 위치*/
+.hidden-form{
+    width:100px;
+    height:40px;
+    background-color: rgb(202, 202, 255);
+    position: absolute;
+    top:0;
+    right:0;
+    display: none;
+}
+.hidden-form > .que{
+    width:40px;
+    height:40px;
+    font-size: 30px;
+    background-color: black;
+    color:white;
+    font-weight: 600;
+    text-align: center;
+    float: left;
+    margin-right: 10px;
+}
+.hidden-form > .btn{
+    width:40px;
+    height:40px;
+    background-color: black;
+    float: left;
+
+}
+.btn > div {
+    width:30px;
+    height:5px;
+    border-radius: 16%;
+    background-color: white;
+    margin: 6px auto;
+}
+
+/*핫게시물처리*/
+
+@media screen and (max-width:1239px){
+    .link{
+        width:calc(30% - 81px);
+    }
+    .logo{
+        width:calc(70% - 189px);
+    }
+}
+@media screen and (max-width:874px){
+    .link{
+        float:none;
+        height:20px;
+        line-height: 20px;
+
+    }
+    .logo{
+        float:none;
+        height:80px;
+        font-size:4vw;
+        line-height: 80px;
+    }
+    .center{
+        position: relative;
+    }
+    .form{
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+}
+
+
+
+
+
+
+@media screen and (max-width:721px){
+    .link{
+        position: absolute;
+        width:140px;
+        left: 0;
+        top:-25px;
+    }
+    .form{
+        display: none;
+    }
+    .hidden-form{
+        display: block;
+    }
+    .logo{
+        width:220px;
+        height:40px;
+        line-height: 40px;
+        font-size:3vw;
+    }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyevent를 알아보자!</title>
+    <style>
+        *{
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        table{
+            border: 1px solid black;
+            width: 350px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>학생 수</th>
+            <td><input type="number" id="student" placeholder="필수 입력" onkeyup="alert('onkeyup')"></td>
+        </tr>
+        <tr>
+            <th>학과 과목</th>
+            <td><input type="number" id="subject" placeholder="필수 입력" onkeydown="alert('onkeydown')" onchange="evaluation()"></td>
+        </tr>
+        <tr>
+            <th>전체 교과서 양</th>
+            <td><input type="number" id="textbook" readonly></td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th>한 조의 인원수</th>
+            <td><input type="number" id="people" placeholder="필수 입력"></td>
+        </tr>
+        <tr>
+            <th>조 개수</th>
+            <td><input type="number" id="team" placeholder="필수 입력" onchange="calculation()"></td>
+        </tr>
+        <tr>
+            <th>전체 인원수</th>
+            <td><input type="text" id="total" readonly></td>
+        </tr>
+    </table>
+    <script>
+        function evaluation(){
+            if(document.getElementById("student").value!=0){
+                document.getElementById("textbook").value = document.getElementById("student").value * document.getElementById("subject").value;
+            }
+        }
+
+        function inputAmt(obj){
+            let p2=(document.getElementById("people").value)*obj.value;
+            document.getElementById("total").setAttribute("value", p2);
+        }
+        document.getElementById("team").onkeyup=function(){
+            inputAmt(this);
+        }
+
+        /*
+        key event 정리
+
+        onkeypress : 지정한 요소에서 키보드가 눌렸을 때 발생합니다.
+        onkeydown : 지정한 요소에서 키보드를 눌렀을 때 발생합니다.
+        onkeyup : 지정한 요소에서 키보드를 눌렸다 땠을 때 발생합니다.
+        */
+    </script>
+</body>
+</html>

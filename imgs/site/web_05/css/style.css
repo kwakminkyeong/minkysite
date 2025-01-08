@@ -1,0 +1,311 @@
+*{
+    color:#333333;
+}
+a{
+    text-decoration:none;
+}
+html,body{
+    height:100%;
+}
+#wrap{
+    width:100%;
+    height:100%;
+}
+.top{
+    width:100%;
+    height:calc(100% - 100px);
+}
+.D{
+    width:100%;
+    height:100px;
+    background-color: #c3e2ff;
+}
+.A{
+    width:200px;
+    height:100%;
+    float:left;
+}
+.C{
+    width:400px;
+    height:100%;
+    float:left;
+}
+.B{
+    width:calc(100% - 600px);
+    height:100%;
+    float:left;
+    overflow:hidden;
+}
+.logo{
+    width:200px;
+    height:100px;
+}
+.menus{
+    width:160px;
+    margin:20px;
+    position:relative;
+    z-index:1;
+}
+ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+li{
+    width:160px;
+    height:50px;
+    text-align:center;
+    line-height:50px;
+    font-size:18px;
+    font-weight:bold;
+}
+li:hover{
+    background-color:black;
+    color:white;
+}
+.main:hover > a{
+    color:white;
+}
+.sub li:hover{
+    background-color:#c3e2ff;
+    
+}
+.sub li:hover a{
+     color:white;
+}
+.sub{
+    width:160px;
+    display:none;
+    position:absolute;
+    z-index:3;
+}
+.main:first-child .sub{
+    left:160px;
+    top:0px;
+}
+.main:nth-child(2) .sub{
+    left:160px;
+    top:50px;
+}
+.main:nth-child(3) .sub{
+    left:160px;
+    top:100px;
+}
+.main:nth-child(4) .sub{
+    left:160px;
+    top:150px;
+}
+
+
+.sub li{
+    font-size:16px;
+    font-weight:lighter;
+    background-color:black;
+   
+}
+.sub li a{
+     color:white;
+}
+.banner div{
+    width:100%;
+    height:10%;
+}
+.banner img{
+    width:100%;
+    height:100%;
+}
+.gongjipan{
+    width:400px;
+    height:45%;
+}
+.gongji{
+    width:400px;
+    height:60%;
+    position:relative;
+    top:20%;
+
+}
+
+
+.gallery{
+    width:400px;
+    height:45%;
+}
+.pan{
+    width:100%;
+    height:400%;
+    position:relative;
+}
+.slide1{
+    width:100%;
+    height:calc(100% /4);
+}
+.slide2{
+    width:100%;
+    height:calc(100% /4);
+}
+.slide3{
+    width:100%;
+    height:calc(100% /4);
+}
+.logo2{
+    width:200px;
+    height:100px;
+    float:left;
+}
+.copy{
+    width:calc(100% - 400px);
+    height:100px;
+    float:left;
+}
+.sns{
+    width:200px;
+    height:100px;
+    float:left;
+}
+.spot{
+    font-size:14px;
+    text-align:center;
+}
+.gongji{
+    width:400px;
+    height:60%;
+    position:relative;
+    top:90px;
+}
+.gongbtn{
+    width:100px;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    font-weight:bold;
+    font-size:18px;
+}
+.gonglist{
+    width:400px;
+    height:200px;
+
+}
+.list{
+    width:300px;
+    height:200px;
+    float:left;
+   
+}
+.list div{
+    width:300px;
+    height:50px;
+    float:left;
+    font-size:14px;
+    line-height:50px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    padding-left:5px;
+}
+.date{
+    width:100px;
+    height:200px;
+    float:left;
+    font-size:14px;
+    line-height:50px;
+    text-align:center;
+}
+
+.gallbtn{
+    width:100px;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.gallpan{
+    width:400px;
+    height:60%;
+    position:relative;
+    top:20%;
+}
+.gallimgs{
+    width:400px;
+    height:200px;
+
+}
+.gallimgs div{
+    float:left;
+    margin:15px;
+}
+.copy div{
+    width:100%;
+    height:50px;
+    text-align:center;
+    line-height:50px;
+}
+.copyright{
+    width:60px;
+    height:40px;
+    font-size:13px;
+}
+.sns div{
+    width:60px;
+    height:100px;
+    float:left;
+    margin-left:5px;
+    line-height:130px;
+    text-align:center;
+}
+.pan img{
+    width:100%;
+    height:100%;
+}
+.add{
+    width:100%;
+    height:60px;
+    line-height:50px;
+}
+#modal{
+    width:100%;
+    height:150%;
+    background-color: rgba(0,0,0,0.5);
+    position: relative;
+    top:-100%;
+    display: none;
+    z-index: 99;
+}
+.popup{
+    width:450px;
+    height:350px;
+    background-color: white;
+    position: absolute;
+    top:20%;
+    margin-left:40%;
+}
+.title{
+    width:450px;
+    height:100px;
+    font-size:18px;
+    font-weight:bold;
+    text-align:center;
+    line-height:100px;
+
+}
+.nayong{
+    width:450px;
+    height:200px;
+    text-align:center;
+    line-height:42px;
+
+}
+.close{
+    width:450px;
+    height:50px;
+    line-height:25px;
+
+}
+span{
+    width:50px;
+    height:22px;
+    border:1px solid black;
+    margin-left:380px;
+}

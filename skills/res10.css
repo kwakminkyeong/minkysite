@@ -1,0 +1,36 @@
+#wrap{
+    width:700px;
+    height: 500px;
+    border: 10px solid black;
+    border-radius: 3px;
+}
+#side{
+    height:100%;
+    width:0px;
+    position: fixed;
+    background-color: black;
+    top:0;
+    left: 0;
+    transition:0.8s;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+#side a{
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+    display: block;
+    font-weight: 600;
+    padding:30px;
+    
+}
+#side .close{
+    position: absolute;
+    top:0;
+    right:0;
+}
+#side a:hover{
+    color: red;
+}
