@@ -45,7 +45,7 @@ window.onload=function(){
 	
 
         var i = 0;
-        var txt1 = 'NAME__곽민경 : PHONE__010-8982-7903 : E-MAIL__minky_kwak@naver.com : SkillTools__포토샵/일러스트/인디자인/프리미어프로/애프터이펙트/Html/CSS/JAVASCRIPT/JAVA/JSP/MySQL ';
+        var txt1 = 'NAME__곽민경 : PHONE__010-8982-7903 : E-MAIL__minky_kwak@naver.com : SkillTools__포토샵/일러스트/인디자인/프리미어프로/애프터이펙트/Html/CSS/JAVASCRIPT/JAVA/JSP/MySQL';
         var speed = 100;
         var infoRightElement = document.getElementsByClassName("infoRight")[0];
 
