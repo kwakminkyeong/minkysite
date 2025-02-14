@@ -111,7 +111,6 @@ window.onload=function(){
     } 
     
 
-
 	
 	
 };// 이 아래에는 아무것도 적으면 안됨
