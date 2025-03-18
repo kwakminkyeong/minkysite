@@ -110,7 +110,116 @@ window.onload=function(){
         });    
     } 
 
+    //======================================pop up
 
-	
-	
+            
+   
+    
+
+    setInterval(function() {
+        // 클래스 이름 목록 정의
+        const classNames = [
+            "pop_2025",
+            "happy",
+            "pop_text",
+            
+           
+        ];
+        
+            // 각 클래스에 대해 반복
+        for (let i = 0; i < classNames.length; i++) {
+            const elements = document.getElementsByClassName(classNames[i]);
+                if (elements.length > 0) {
+                    // 요소의 스타일을 변경
+                    setTimeout(() => {
+                        elements[0].style.opacity = "1";
+                        
+                    }, i * 800); // 각 요소마다 1초 간격
+                }
+        }
+}, 500);
+
+
+// let pop=document.getElementsByClassName("popup")[0];
+// let close=document.getElementsByClassName("pop_close")[0];
+// close.addEventListener("click", function(){
+//     pop.setAttribute("style", "display:none;");
+// });
+
+
+
+// 쿠키
+
+var myPopup = document.querySelector('.popup'),
+	checkbox = document.querySelector('#popup'),
+	popupClose = document.querySelector('.pop_close');
+
+
+//쿠키생성
+function setCookie(name, value, day){
+    let date = new Date(); //현재 날짜 지정
+    date.setDate(date.getDate() + day);
+
+    let mycookie = ' ';
+    mycookie += name + "=" + value + ';';
+    mycookie += "Expires=" + date.toUTCString();
+
+    document.cookie = mycookie; //쿠키 설, 생성
+
+};
+// setCookie( "minky's", "Main", 1 );
+
+//쿠키삭제
+function delCookie(name){
+    let date=new Date(); //현재 날짜 지정
+    date.setDate(date.getDate() -1);
+    
+    let setCookie = '';
+    setCookie +=name + '=Main;' ;
+    setCookie +='Expires=' + date.toUTCString();
+    
+    document.cookie =setCookie; //쿠키 설정. 생성
+}
+
+
+
+//쿠키확인
+function checkCookie(name){
+    let cookies=document.cookie.split(';');
+    console.log(cookies);
+    let visited = false; //방문 거짓
+
+    for(var i in cookies){
+        if(cookies[i].indexOf(name) > -1){
+            visited = true;
+            console.log(visited);
+        }
+    }
+
+ 
+  if(visited){
+    //재방문
+    myPopup.style.display = 'none';
+   }
+   else{
+    //신규방문
+    myPopup.style.display = 'block'
+   }
+}
+checkCookie('minky');
+
+popupClose.addEventListener('click', function(){
+    //a.checked true false
+    if(checkbox.checked){
+        //팝업을 다시 안보겠다. 팝업 닫고, 쿠키 생성.
+        setCookie( "minky's", "Main", 1 );
+        myPopup.style.display = 'none';
+    }
+    else{
+        //팝업을 계속 본다. 팝업 닫고, 쿠키제거
+        myPopup.style.display = 'none';
+        delCookie('minky')
+    }
+});
+   
 };// 이 아래에는 아무것도 적으면 안됨
