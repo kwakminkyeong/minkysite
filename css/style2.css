@@ -170,7 +170,7 @@ a:hover{
 .sajin{
 	width:197px;
 	height:250px;
-	/* border: 1px solid gray; */
+	border: 1px solid gray;
 	border-radius:10px;
 	margin-top: 46px;
 	margin-left: 35px;
@@ -180,7 +180,7 @@ a:hover{
 }
 .sajin img{
 	width:100%;
-	margin-top: -30px;
+	margin-top: 21px;
 	
 }
 .info{
